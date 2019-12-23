@@ -32,7 +32,7 @@ public class ProductScreenActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.menu_product_admin:
+            case R.id.nav_product_admin:
                 //TODO: check for password first
                 this.startActivity(new Intent(this, AdminActivity.class));
                 break;
