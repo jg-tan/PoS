@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_admin_add_product"
+        android:icon="@drawable/ic_add_black"
+        android:title="@string/menu_admin_add_product" />
+
+    <item
+        android:id="@+id/menu_admin_product_list"
+        android:icon="@drawable/ic_list_black"
+        android:title="@string/menu_admin_product_list" />
+
+    <item
+        android:id="@+id/menu_admin_settings"
+        android:icon="@drawable/ic_settings_black"
+        android:title="@string/menu_admin_settings" />
+
+</menu>
