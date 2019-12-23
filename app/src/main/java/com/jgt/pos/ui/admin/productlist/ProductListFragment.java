@@ -1,4 +1,6 @@
 package com.jgt.pos.ui.admin.productlist;
 
-public class ProductListFragment {
+import androidx.fragment.app.Fragment;
+
+public class ProductListFragment extends Fragment {
 }
