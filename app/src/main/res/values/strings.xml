@@ -11,6 +11,7 @@
 
     <!-- Menu -->
     <string name="menu_product_admin">Admin</string>
+    <string name="menu_product_cart">Cart</string>
     <string name="menu_admin_add_product">Add Product</string>
     <string name="menu_admin_product_list">Product List</string>
     <string name="menu_admin_settings">Settings</string>
