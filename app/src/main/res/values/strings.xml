@@ -15,4 +15,6 @@
     <string name="menu_admin_add_product">Add Product</string>
     <string name="menu_admin_product_list">Product List</string>
     <string name="menu_admin_settings">Settings</string>
+    <string name="menu_admin_close">Close</string>
+
 </resources>

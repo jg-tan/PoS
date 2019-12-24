@@ -9,7 +9,7 @@
     <include layout="@layout/activity_shop_content_main" />
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/nav_appbar_view"
+        android:id="@+id/nav_appbar_view_shop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
