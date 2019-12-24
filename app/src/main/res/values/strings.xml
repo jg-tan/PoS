@@ -22,4 +22,14 @@
     <string name="fragment_admin_add_product_item_name">Item Name</string>
     <string name="fragment_admin_add_product_item_price">Item Price</string>
 
+    <!-- Sales Activity -->
+    <!-- Cart Fragment -->
+    <string name="fragment_sales_cart_item_name">Item Name</string>
+    <string name="fragment_sales_cart_item_price_single">Item Price Single</string>
+    <string name="fragment_sales_cart_item_qty_add">+</string>
+    <string name="fragment_sales_cart_item_qty">X</string>
+    <string name="fragment_sales_cart_item_qty_remove">-</string>
+    <string name="fragment_sales_cart_item_price_total">Item Price Total</string>
+    <string name="fragment_sales_cart_item_delete">X</string>
+
 </resources>
