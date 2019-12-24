@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jgt.pos.R;
-import com.jgt.pos.database.itemdb.ProductItem;
+import com.jgt.pos.database.itemdb.Item;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.ProductGrViewHolder> {
 
-    List<ProductItem> productItems;
+    List<Item> items;
 
     @NonNull
     @Override
@@ -27,21 +27,21 @@ public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.Produc
 
     @Override
     public void onBindViewHolder(@NonNull ProductGrViewHolder holder, int position) {
-        holder.setProductItem(productItems.get(position));
+        holder.setProductItem(items.get(position));
     }
 
     @Override
     public int getItemCount() {
-        if(null != productItems) {
-            return productItems.size();
+        if(null != items) {
+            return items.size();
         }
         return 0;
     }
 
     class ProductGrViewHolder extends RecyclerView.ViewHolder {
-        ProductItem productItem;
+        Item productItem;
 
-        public void setProductItem(ProductItem productItem) {
+        public void setProductItem(Item productItem) {
             this.productItem = productItem;
         }
 
