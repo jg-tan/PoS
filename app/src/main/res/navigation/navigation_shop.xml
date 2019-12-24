@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_product"
+    app:startDestination="@+id/nav_shop_grid">
+
+    <fragment
+        android:id="@+id/nav_shop_grid"
+        android:name="com.jgt.pos.ui.shop.grid.ShopGridFragment"
+        android:label="@string/fragment_shop_grid"
+        tools:layout="@layout/fragment_shop_grid" />
+
+    <fragment
+        android:id="@+id/nav_shop_cart"
+        android:name="com.jgt.pos.ui.shop.cart.ShopCartFragment"
+        android:label="@string/fragment_shop_cart"
+        tools:layout="@layout/fragment_shop_cart" />
+
+</navigation>
