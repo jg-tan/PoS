@@ -39,10 +39,10 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     }
 
     class ProductListItemViewHolder extends RecyclerView.ViewHolder {
-        Item productItem;
+        Item item;
 
-        public void setProductItem(Item productItem) {
-            this.productItem = productItem;
+        public void setProductItem(Item item) {
+            this.item = item;
         }
 
         public ProductListItemViewHolder(@NonNull View itemView) {

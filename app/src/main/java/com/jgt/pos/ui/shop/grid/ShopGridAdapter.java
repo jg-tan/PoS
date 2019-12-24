@@ -39,10 +39,10 @@ public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.Produc
     }
 
     class ProductGrViewHolder extends RecyclerView.ViewHolder {
-        Item productItem;
+        Item item;
 
-        public void setProductItem(Item productItem) {
-            this.productItem = productItem;
+        public void setProductItem(Item item) {
+            this.item = item;
         }
 
         public ProductGrViewHolder(@NonNull View itemView) {

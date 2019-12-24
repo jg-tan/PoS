@@ -17,4 +17,9 @@
     <string name="menu_admin_settings">Settings</string>
     <string name="menu_admin_close">Close</string>
 
+    <!-- Admin Activity -->
+    <!-- Add Product Fragment -->
+    <string name="fragment_admin_add_product_item_name">Item Name</string>
+    <string name="fragment_admin_add_product_item_price">Item Price</string>
+
 </resources>
