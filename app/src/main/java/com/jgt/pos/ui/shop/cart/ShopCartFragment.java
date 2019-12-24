@@ -17,9 +17,8 @@ public class ShopCartFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d("GAB", "test");
+        Log.d("GAB", "CART");
         View root = inflater.inflate(R.layout.fragment_shop_cart, container, false);
         return root;
     }
-
 }

@@ -6,11 +6,12 @@
         android:id="@+id/nav_shop_admin"
         android:orderInCategory="100"
         android:title="@string/menu_shop_admin"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_settings_white"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_shop_cart"
-        android:orderInCategory="100"
+        android:orderInCategory="1"
         android:icon="@drawable/ic_shopping_cart_white"
         android:title="@string/menu_shop_cart"
         app:showAsAction="ifRoom" />
