@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp">
+
+    <Button
+        android:id="@+id/cart_btn_checkout"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textSize="10sp"
+        android:text="@string/fragment_sales_cart_checkout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cart_tv_total_label"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/fragment_sales_cart_item_price_total"
+        app:layout_constraintStart_toEndOf="@+id/cart_btn_checkout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cart_tv_total"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="34dp"
+        android:text="TextView"
+        android:gravity="end|center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cart_tv_total_label"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

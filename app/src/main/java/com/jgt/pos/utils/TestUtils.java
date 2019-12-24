@@ -10,10 +10,9 @@ public class TestUtils {
 
     public static List<Cart> getTestItemList() {
         List<Cart> testList = new ArrayList<>();
-        testList.add(createCartItem("item 1", 500, 2));
-        testList.add(createCartItem("item 2", 250, 6));
-        testList.add(createCartItem("item 3", 10, 50));
-        testList.add(createCartItem("item 4", 60, 30));
+        for(int i = 0; i < 20; i++) {
+            testList.add(createCartItem("item " + i, 60, 30));
+        }
         return testList;
     }
 

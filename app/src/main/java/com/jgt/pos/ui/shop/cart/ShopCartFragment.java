@@ -16,19 +16,41 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * 1. Get Total Amount
+ * - On Init: add sum of items
+ * - Set sum in LiveData with int
+ * 2. Add or remove items
+ * - On Add Clicked:
+ * ---- get single price
+ * ---- add to LiveData sum
+ * - On Remove Clicked:
+ * ---- get single price
+ * ---- subtract from LiveData sum
+ * - On Delete Clicked:
+ * ---- get total price
+ * ---- subtract from LiveData sum
+ * */
 public class ShopCartFragment extends Fragment {
 
     private RecyclerView rvListView;
     private LinearLayoutManager layoutManager;
     private ShopCartListAdapter adapter;
+    private View rootView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("GAB", "CART");
-        View root = inflater.inflate(R.layout.fragment_shop_cart, container, false);
+        rootView = inflater.inflate(R.layout.fragment_shop_cart, container, false);
+        initRecyclerView();
+        hideButtonsFromLabel();
+        return rootView;
+    }
+
+    private void initRecyclerView() {
         Activity activity = getActivity();
-        rvListView = root.findViewById(R.id.shop_cart_fragment_rv_listview);
+        rvListView = rootView.findViewById(R.id.shop_cart_fragment_rv_listview);
         adapter = new ShopCartListAdapter();
         layoutManager = new LinearLayoutManager(activity);
         adapter.setCartItems(TestUtils.getTestItemList());
@@ -36,6 +58,11 @@ public class ShopCartFragment extends Fragment {
         rvListView.setLayoutManager(layoutManager);
         rvListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-        return root;
+    }
+
+    private void hideButtonsFromLabel() {
+        rootView.findViewById(R.id.cart_btn_add).setVisibility(View.INVISIBLE);
+        rootView.findViewById(R.id.cart_btn_remove).setVisibility(View.INVISIBLE);
+        rootView.findViewById(R.id.cart_btn_delete).setVisibility(View.INVISIBLE);
     }
 }
