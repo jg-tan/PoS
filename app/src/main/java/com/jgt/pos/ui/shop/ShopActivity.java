@@ -25,11 +25,10 @@ public class ShopActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+        //Setup toolbar
         Toolbar toolbar = findViewById(R.id.tb_activity_product);
         setSupportActionBar(toolbar);
-        //TODO: fragment not changing
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_shop_grid,
                 R.id.nav_shop_cart)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_shop);
@@ -51,19 +50,14 @@ public class ShopActivity extends AppCompatActivity {
                 //TODO: check for password first
                 this.startActivity(new Intent(this, AdminActivity.class));
                 break;
-//            case R.id.nav_product_cart:
-//                startCartFragment();
-//                break;
+            case R.id.nav_shop_cart:
+                //NavController is attached to nav_host
+                Navigation.findNavController(this, R.id.nav_host_fragment_shop)
+                        .navigate(R.id.on_cart_clicked);
+                break;
             default:
                 break;
         }
         return true;
-    }
-
-    private void startCartFragment() {
-        ShopCartFragment fragment = new ShopCartFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.nav_host_fragment_shop, fragment);
-        transaction.commit();
     }
 }
