@@ -2,6 +2,7 @@ package com.jgt.pos.ui.shop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -49,8 +50,12 @@ public class ShopActivity extends AppCompatActivity {
                 break;
             case R.id.nav_shop_cart:
                 //NavController is attached to nav_host
-                Navigation.findNavController(this, R.id.nav_host_fragment_shop)
-                        .navigate(R.id.on_cart_clicked);
+                try {
+                    Navigation.findNavController(this, R.id.nav_host_fragment_shop)
+                            .navigate(R.id.on_cart_clicked);
+                } catch (Exception e) {
+                    Log.w("GAB", "Cart is double clicked, will cause force stop");
+                }
                 break;
             default:
                 break;
