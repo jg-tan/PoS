@@ -23,8 +23,7 @@ public class ShopActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-        //Setup toolbar
-        Toolbar toolbar = findViewById(R.id.tb_activity_product);
+        Toolbar toolbar = findViewById(R.id.tb_shop);
         setSupportActionBar(toolbar);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_shop_cart)
