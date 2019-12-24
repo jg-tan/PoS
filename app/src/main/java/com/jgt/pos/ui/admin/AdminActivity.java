@@ -1,6 +1,5 @@
 package com.jgt.pos.ui.admin;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +28,7 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        Toolbar toolbar = findViewById(R.id.tb_activity_admin);
+        Toolbar toolbar = findViewById(R.id.tb_admin);
         setSupportActionBar(toolbar);
         NavigationView navigationView = findViewById(R.id.nav_view_admin);
         DrawerLayout drawer = findViewById(R.id.activity_admin);
@@ -66,7 +65,7 @@ public class AdminActivity extends AppCompatActivity {
                 finish();
                 break;
             default:
-                break;
+                return super.onOptionsItemSelected(item);
         }
         return true;
     }
