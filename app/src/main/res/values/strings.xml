@@ -2,36 +2,39 @@
     <string name="app_name">PoS</string>
 
     <!-- Fragment Names -->
-    <string name="fragment_admin_add_product">Add Product</string>
-    <string name="fragment_admin_edit_product">Edit Product</string>
-    <string name="fragment_admin_product_list">Registered Products</string>
-    <string name="fragment_admin_settings">Settings</string>
-    <string name="fragment_shop_grid">Shop Name</string>
-    <string name="fragment_shop_cart">Cart</string>
+    <string name="admin_fragment_add_product_title">Add Product</string>
+    <string name="admin_fragment_edit_product_title">Edit Product</string>
+    <string name="admin_fragment_product_list_title">Registered Products</string>
+    <string name="admin_fragment_settings_title">Settings</string>
+    <string name="shop_fragment_grid_title">Shop Name</string>
+    <string name="shop_fragment_cart_title">Cart</string>
 
     <!-- Menu -->
-    <string name="menu_shop_admin">Admin</string>
-    <string name="menu_shop_cart">Cart</string>
-    <string name="menu_admin_add_product">Add Product</string>
-    <string name="menu_admin_product_list">Product List</string>
-    <string name="menu_admin_settings">Settings</string>
-    <string name="menu_admin_close">Close</string>
+    <string name="admin_menu_add_product">Add Product</string>
+    <string name="admin_menu_product_list">Product List</string>
+    <string name="admin_menu_settings">Settings</string>
+    <string name="admin_menu_close">Close</string>
+    <string name="shop_menu_open_admin">Admin</string>
+    <string name="shop_menu_cart">Cart</string>
 
     <!-- Admin Activity -->
     <!-- Add Product Fragment -->
-    <string name="fragment_admin_add_product_item_name">Item Name</string>
-    <string name="fragment_admin_add_product_item_price">Item Price</string>
+    <string name="admin_fragment_add_product_item_name">Item Name</string>
+    <string name="admin_fragment_add_product_item_price">Item Price</string>
+    <string name="admin_fragment_add_product_item_name_placeholder">Name</string>
+    <string name="admin_fragment_add_product_item_price_placeholder">0</string>
+    <string name="admin_fragment_add_product_add_item">Add Item</string>
 
-    <!-- Sales Activity -->
+    <!-- Shop Activity -->
     <!-- Cart Fragment -->
-    <string name="fragment_sales_cart_item_name">Item Name</string>
-    <string name="fragment_sales_cart_item_price_single">Price</string>
-    <string name="fragment_sales_cart_item_qty_add">+</string>
-    <string name="fragment_sales_cart_item_qty">Qty</string>
-    <string name="fragment_sales_cart_item_qty_remove">-</string>
-    <string name="fragment_sales_cart_item_price_total">Total</string>
-    <string name="fragment_sales_cart_item_delete">X</string>
-    <string name="fragment_sales_cart_checkout">Checkout</string>
-    <string name="fragment_sales_cart_cart_total">Total</string>
+    <string name="shop_fragment_cart_item_name">Item Name</string>
+    <string name="shop_fragment_cart_item_price_single">Price</string>
+    <string name="shop_fragment_cart_item_qty_add">+</string>
+    <string name="shop_fragment_cart_item_qty">Qty</string>
+    <string name="shop_fragment_cart_item_qty_remove">-</string>
+    <string name="shop_fragment_cart_item_price_total">Total</string>
+    <string name="shop_fragment_cart_item_delete">X</string>
+    <string name="shop_fragment_cart_checkout">Checkout</string>
+    <string name="shop_fragment_cart_cart_total">Total</string>
 
 </resources>

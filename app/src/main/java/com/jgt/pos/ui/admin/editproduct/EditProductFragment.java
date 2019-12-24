@@ -19,7 +19,7 @@ public class EditProductFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_admin_edit_product, container, false);
+        View root = inflater.inflate(R.layout.admin_fragment_edit_product, container, false);
         return root;
     }
 }

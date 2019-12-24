@@ -18,7 +18,7 @@ public class ShopGridFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("GAB", "GRID");
-        View root = inflater.inflate(R.layout.fragment_shop_grid, container, false);
+        View root = inflater.inflate(R.layout.shop_fragment_grid, container, false);
         return root;
     }
 }

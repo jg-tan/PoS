@@ -23,20 +23,20 @@ public class ShopActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop);
+        setContentView(R.layout.shop_activity);
         Toolbar toolbar = findViewById(R.id.tb_shop);
         setSupportActionBar(toolbar);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_shop_cart)
+                R.id.shop_nav_cart_fragment)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_shop);
+        NavController navController = Navigation.findNavController(this, R.id.shop_nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(toolbar, navController);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_shop, menu);
+        getMenuInflater().inflate(R.menu.shop_menu, menu);
         return true;
     }
 
@@ -44,14 +44,14 @@ public class ShopActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.nav_shop_admin:
+            case R.id.shop_nav_admin_fragment:
                 //TODO: check for password first
                 this.startActivity(new Intent(this, AdminActivity.class));
                 break;
-            case R.id.nav_shop_cart:
+            case R.id.shop_nav_cart_fragment:
                 //NavController is attached to nav_host
                 try {
-                    Navigation.findNavController(this, R.id.nav_host_fragment_shop)
+                    Navigation.findNavController(this, R.id.shop_nav_host_fragment)
                             .navigate(R.id.on_cart_clicked);
                 } catch (Exception e) {
                     Log.w("GAB", "Cart is double clicked, will cause force stop");

@@ -23,7 +23,7 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
     public ProductCartListItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.adapter_cart, parent, false);
+                .inflate(R.layout.shop_adapter_cart, parent, false);
         return new ProductCartListItemViewHolder(view);
     }
 
@@ -52,13 +52,13 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
 
         public ProductCartListItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.tvItemName = itemView.findViewById(R.id.cart_tv_item_name);
-            this.tvItemPriceSingle = itemView.findViewById(R.id.cart_tv_item_price_single);
-            this.tvItemPriceTotal = itemView.findViewById(R.id.cart_tv_item_price_total);
-            this.tvItemQty = itemView.findViewById(R.id.cart_tv_item_qty);
-            this.btnAdd = itemView.findViewById(R.id.cart_btn_add);
-            this.btnRemove = itemView.findViewById(R.id.cart_btn_remove);
-            this.btnDelete = itemView.findViewById(R.id.cart_btn_delete);
+            this.tvItemName = itemView.findViewById(R.id.shop_cart_tv_item_name);
+            this.tvItemPriceSingle = itemView.findViewById(R.id.shop_cart_tv_item_price_single);
+            this.tvItemPriceTotal = itemView.findViewById(R.id.shop_cart_tv_item_price_total);
+            this.tvItemQty = itemView.findViewById(R.id.shop_cart_tv_item_qty);
+            this.btnAdd = itemView.findViewById(R.id.shop_cart_btn_add);
+            this.btnRemove = itemView.findViewById(R.id.shop_cart_btn_remove);
+            this.btnDelete = itemView.findViewById(R.id.shop_cart_btn_delete);
         }
 
         public void setCartItem(Cart cartItem) {

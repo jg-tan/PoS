@@ -27,32 +27,32 @@ public class AdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.admin_activity);
         Toolbar toolbar = findViewById(R.id.tb_admin);
         setSupportActionBar(toolbar);
-        NavigationView navigationView = findViewById(R.id.nav_view_admin);
-        DrawerLayout drawer = findViewById(R.id.activity_admin);
+        NavigationView navigationView = findViewById(R.id.admin_nav_view);
+        DrawerLayout drawer = findViewById(R.id.admin_activity);
         //When using Navigation Controller, MENU and NAVIGATION IDs must be similar
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_admin_add_product,
-                R.id.nav_admin_product_list,
-                R.id.nav_admin_settings)
+                R.id.admin_nav_add_product_fragment,
+                R.id.admin_nav_product_list_fragment,
+                R.id.admin_nav_settings_fragment)
                 .setDrawerLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_admin);
+        NavController navController = Navigation.findNavController(this, R.id.admin_nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_admin_toolbar, menu);
+        getMenuInflater().inflate(R.menu.admin_menu_toolbar, menu);
         return true;
     }
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_admin);
+        NavController navController = Navigation.findNavController(this, R.id.admin_nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
@@ -61,7 +61,7 @@ public class AdminActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.nav_admin_close:
+            case R.id.admin_nav_close_fragment:
                 finish();
                 break;
             default:

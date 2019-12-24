@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_shop_admin"
+        android:id="@+id/shop_nav_admin_fragment"
         android:orderInCategory="100"
-        android:title="@string/menu_shop_admin"
+        android:title="@string/shop_menu_open_admin"
         android:icon="@drawable/ic_settings_white"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/nav_shop_cart"
+        android:id="@+id/shop_nav_cart_fragment"
         android:orderInCategory="1"
         android:icon="@drawable/ic_shopping_cart_white"
-        android:title="@string/menu_shop_cart"
+        android:title="@string/shop_menu_cart"
         app:showAsAction="ifRoom" />
 
 </menu>
