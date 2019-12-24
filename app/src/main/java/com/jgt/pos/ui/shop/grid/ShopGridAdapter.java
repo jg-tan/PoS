@@ -1,4 +1,4 @@
-package com.jgt.pos.ui.productscreen.productgrid;
+package com.jgt.pos.ui.shop.grid;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ProductGridAdapter extends RecyclerView.Adapter<ProductGridAdapter.ProductGrViewHolder> {
+public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.ProductGrViewHolder> {
 
     List<ProductItem> productItems;
 
@@ -21,7 +21,7 @@ public class ProductGridAdapter extends RecyclerView.Adapter<ProductGridAdapter.
     public ProductGrViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.adapter_product_grid, parent, false);
+                .inflate(R.layout.adapter_grid, parent, false);
         return new ProductGrViewHolder(view);
     }
 

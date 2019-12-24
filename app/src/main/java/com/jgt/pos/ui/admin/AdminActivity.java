@@ -27,6 +27,10 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
         NavigationView navigationView = findViewById(R.id.nav_view_admin);
         DrawerLayout drawer = findViewById(R.id.activity_admin);
+        /*
+        * When using Navigation Controller,
+        * MENU and NAVIGATION IDs must be similar
+        * */
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_admin_add_product,
                 R.id.nav_admin_product_list,
@@ -45,8 +49,3 @@ public class AdminActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 }
-
-/**
- * When using Navigation Controller,
- * MENU and NAVIGATION IDs must be similar
- * */

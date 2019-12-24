@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.jgt.pos.ui.productscreen.ProductScreenActivity;
+import com.jgt.pos.ui.shop.ShopActivity;
 
 public class BootReceiver extends BroadcastReceiver {
     @Override
@@ -12,7 +12,7 @@ public class BootReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if(Intent.ACTION_BOOT_COMPLETED.equals(action)) {
-            context.startActivity(new Intent(context, ProductScreenActivity.class));
+            context.startActivity(new Intent(context, ShopActivity.class));
         }
     }
 }

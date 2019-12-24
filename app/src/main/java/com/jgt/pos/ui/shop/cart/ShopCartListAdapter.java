@@ -1,4 +1,4 @@
-package com.jgt.pos.ui.productscreen.productcart;
+package com.jgt.pos.ui.shop.cart;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,14 +9,14 @@ import com.jgt.pos.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ProductCartListAdapter extends RecyclerView.Adapter<ProductCartListAdapter.ProductCartListItemViewHolder> {
+public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapter.ProductCartListItemViewHolder> {
 
     @NonNull
     @Override
     public ProductCartListItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.adapter_product_cart, parent, false);
+                .inflate(R.layout.adapter_cart, parent, false);
         return new ProductCartListItemViewHolder(view);
     }
 
