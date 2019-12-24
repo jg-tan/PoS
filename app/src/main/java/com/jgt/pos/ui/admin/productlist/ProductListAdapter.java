@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jgt.pos.R;
-import com.jgt.pos.database.itemdb.ProductItem;
+import com.jgt.pos.database.itemdb.Item;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ProductListItemViewHolder> {
 
-    List<ProductItem> productItems;
+    List<Item> items;
 
     @NonNull
     @Override
@@ -27,21 +27,21 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ProductListItemViewHolder holder, int position) {
-        holder.setProductItem(productItems.get(position));
+        holder.setProductItem(items.get(position));
     }
 
     @Override
     public int getItemCount() {
-        if(null != productItems) {
-            return productItems.size();
+        if(null != items) {
+            return items.size();
         }
         return 0;
     }
 
     class ProductListItemViewHolder extends RecyclerView.ViewHolder {
-        ProductItem productItem;
+        Item productItem;
 
-        public void setProductItem(ProductItem productItem) {
+        public void setProductItem(Item productItem) {
             this.productItem = productItem;
         }
 
