@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_shop">
+    tools:showIn="@layout/shop_activity">
 
     <fragment
-        android:id="@+id/nav_host_fragment_shop"
+        android:id="@+id/shop_nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,6 +16,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/navigation_shop" />
+        app:navGraph="@navigation/shop_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

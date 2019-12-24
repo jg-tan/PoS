@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_admin"
+    app:startDestination="@+id/admin_nav_settings_fragment"
+    tools:showIn="navigation_view">
+
+    <fragment
+        android:id="@+id/admin_nav_add_product_fragment"
+        android:name="com.jgt.pos.ui.admin.addproduct.AddProductFragment"
+        android:label="@string/admin_fragment_add_product_title"
+        tools:layout="@layout/admin_fragment_add_product" />
+
+    <fragment
+        android:id="@+id/admin_nav_product_list_fragment"
+        android:name="com.jgt.pos.ui.admin.productlist.ProductListFragment"
+        android:label="@string/admin_fragment_product_list_title"
+        tools:layout="@layout/admin_fragment_product_list">
+        <action
+            android:id="@+id/fragment_list_action_item_long_press"
+            app:destination="@+id/admin_nav_edit_product_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/admin_nav_edit_product_fragment"
+        android:name="com.jgt.pos.ui.admin.editproduct.EditProductFragment"
+        android:label="@string/admin_fragment_edit_product_title"
+        tools:layout="@layout/admin_fragment_edit_product" />
+
+    <fragment
+        android:id="@+id/admin_nav_settings_fragment"
+        android:name="com.jgt.pos.ui.admin.settings.SettingsFragment"
+        android:label="@string/admin_fragment_settings_title"
+        tools:layout="@layout/admin_fragment_settings" />
+
+</navigation>

@@ -21,7 +21,7 @@ public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.Produc
     public ProductGrViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.adapter_grid, parent, false);
+                .inflate(R.layout.shop_adapter_grid, parent, false);
         return new ProductGrViewHolder(view);
     }
 

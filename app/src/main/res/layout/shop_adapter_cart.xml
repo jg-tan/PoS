@@ -7,89 +7,89 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/cart_tv_item_name"
+        android:id="@+id/shop_cart_tv_item_name"
         android:layout_width="140dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
-        android:text="@string/fragment_sales_cart_item_name"
+        android:text="@string/shop_fragment_cart_item_name"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/cart_tv_item_price_single"
+        android:id="@+id/shop_cart_tv_item_price_single"
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/fragment_sales_cart_item_price_single"
+        android:text="@string/shop_fragment_cart_item_price_single"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/cart_tv_item_name"
+        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_name"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/cart_tv_item_price_total"
+        android:id="@+id/shop_cart_tv_item_price_total"
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/fragment_sales_cart_item_price_total"
+        android:text="@string/shop_fragment_cart_item_price_total"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/cart_btn_add"
+        app:layout_constraintStart_toEndOf="@+id/shop_cart_btn_add"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/cart_tv_item_qty"
+        android:id="@+id/shop_cart_tv_item_qty"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/fragment_sales_cart_item_qty"
+        android:text="@string/shop_fragment_cart_item_qty"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/cart_btn_remove"
+        app:layout_constraintStart_toEndOf="@+id/shop_cart_btn_remove"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cart_btn_remove"
+        android:id="@+id/shop_cart_btn_remove"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/fragment_sales_cart_item_qty_remove"
+        android:text="@string/shop_fragment_cart_item_qty_remove"
         android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/cart_tv_item_price_single"
+        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_price_single"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cart_btn_add"
+        android:id="@+id/shop_cart_btn_add"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/fragment_sales_cart_item_qty_add"
+        android:text="@string/shop_fragment_cart_item_qty_add"
         android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/cart_tv_item_qty"
+        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_qty"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cart_btn_delete"
+        android:id="@+id/shop_cart_btn_delete"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/fragment_sales_cart_item_delete"
+        android:text="@string/shop_fragment_cart_item_delete"
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cart_tv_item_price_total"
+        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_price_total"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_product"
-    app:startDestination="@+id/nav_shop_grid">
+    app:startDestination="@+id/shop_nav_grid_fragment">
 
     <fragment
-        android:id="@+id/nav_shop_grid"
+        android:id="@+id/shop_nav_grid_fragment"
         android:name="com.jgt.pos.ui.shop.grid.ShopGridFragment"
-        android:label="@string/fragment_shop_grid"
-        tools:layout="@layout/fragment_shop_grid" >
+        android:label="@string/shop_fragment_grid_title"
+        tools:layout="@layout/shop_fragment_grid" >
         <action
             android:id="@+id/on_cart_clicked"
-            app:destination="@id/nav_shop_cart" />
+            app:destination="@id/shop_nav_cart_fragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_shop_cart"
+        android:id="@+id/shop_nav_cart_fragment"
         android:name="com.jgt.pos.ui.shop.cart.ShopCartFragment"
-        android:label="@string/fragment_shop_cart"
-        tools:layout="@layout/fragment_shop_cart" />
+        android:label="@string/shop_fragment_cart_title"
+        tools:layout="@layout/shop_fragment_cart" />
 
 </navigation>

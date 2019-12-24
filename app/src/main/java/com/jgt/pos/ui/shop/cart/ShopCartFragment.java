@@ -42,7 +42,7 @@ public class ShopCartFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("GAB", "CART");
-        rootView = inflater.inflate(R.layout.fragment_shop_cart, container, false);
+        rootView = inflater.inflate(R.layout.shop_fragment_cart, container, false);
         initRecyclerView();
         hideButtonsFromLabel();
         return rootView;
@@ -50,7 +50,7 @@ public class ShopCartFragment extends Fragment {
 
     private void initRecyclerView() {
         Activity activity = getActivity();
-        rvListView = rootView.findViewById(R.id.shop_cart_fragment_rv_listview);
+        rvListView = rootView.findViewById(R.id.shop_cart_fragment_rv_cart_items);
         adapter = new ShopCartListAdapter();
         layoutManager = new LinearLayoutManager(activity);
         adapter.setCartItems(TestUtils.getTestItemList());
@@ -61,8 +61,8 @@ public class ShopCartFragment extends Fragment {
     }
 
     private void hideButtonsFromLabel() {
-        rootView.findViewById(R.id.cart_btn_add).setVisibility(View.INVISIBLE);
-        rootView.findViewById(R.id.cart_btn_remove).setVisibility(View.INVISIBLE);
-        rootView.findViewById(R.id.cart_btn_delete).setVisibility(View.INVISIBLE);
+        rootView.findViewById(R.id.shop_cart_btn_add).setVisibility(View.INVISIBLE);
+        rootView.findViewById(R.id.shop_cart_btn_remove).setVisibility(View.INVISIBLE);
+        rootView.findViewById(R.id.shop_cart_btn_delete).setVisibility(View.INVISIBLE);
     }
 }

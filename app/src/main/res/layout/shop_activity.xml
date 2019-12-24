@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.shop.ShopActivity">
 
-    <include layout="@layout/activity_shop_toolbar" />
+    <include layout="@layout/shop_activity_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
