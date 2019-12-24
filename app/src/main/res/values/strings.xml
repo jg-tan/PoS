@@ -25,11 +25,13 @@
     <!-- Sales Activity -->
     <!-- Cart Fragment -->
     <string name="fragment_sales_cart_item_name">Item Name</string>
-    <string name="fragment_sales_cart_item_price_single">Item Price Single</string>
+    <string name="fragment_sales_cart_item_price_single">Price</string>
     <string name="fragment_sales_cart_item_qty_add">+</string>
-    <string name="fragment_sales_cart_item_qty">X</string>
+    <string name="fragment_sales_cart_item_qty">Qty</string>
     <string name="fragment_sales_cart_item_qty_remove">-</string>
-    <string name="fragment_sales_cart_item_price_total">Item Price Total</string>
+    <string name="fragment_sales_cart_item_price_total">Total</string>
     <string name="fragment_sales_cart_item_delete">X</string>
+    <string name="fragment_sales_cart_checkout">Checkout</string>
+    <string name="fragment_sales_cart_cart_total">Total</string>
 
 </resources>
