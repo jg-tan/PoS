@@ -5,6 +5,8 @@
     android:layout_gravity="center"
     android:gravity="center">
 
-    <include layout="@layout/admin_fragment_add_product_content" />
+    <include layout="@layout/admin_fragment_add_product_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
