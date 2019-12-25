@@ -8,38 +8,42 @@
 
     <Button
         android:id="@+id/shop_cart_btn_checkout"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/shop_adapter_cart_checkout_width"
+        android:layout_height="@dimen/shop_adapter_cart_label_height"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/shop_fragment_cart_checkout"
-        android:textSize="10sp"
+        android:textSize="@dimen/shop_adapter_cart_checkout_button_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/shop_cart_tv_total_label"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/shop_adapter_cart_checkout_label_total_width"
+        android:layout_height="@dimen/shop_adapter_cart_label_height"
         android:layout_marginStart="104dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_cart_total"
+        android:textColor="@color/black"
+        android:textSize="@dimen/shop_adapter_cart_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/shop_cart_tv_total"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toEndOf="@+id/shop_cart_btn_checkout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/shop_cart_tv_total"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/shop_adapter_cart_item_price_width"
+        android:layout_height="@dimen/shop_adapter_cart_label_height"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="34dp"
-        android:gravity="end|center_vertical"
+        android:layout_marginEnd="61dp"
+        android:gravity="center"
         android:text="@string/shop_fragment_cart_cart_total_placeholder"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
-        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_total_label"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
