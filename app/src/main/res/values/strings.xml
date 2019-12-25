@@ -28,6 +28,10 @@
     <string name="admin_fragment_add_product_add_icon">Add Icon</string>
 
     <!-- Shop Activity -->
+    <!-- Grid Fragment -->
+    <string name="shop_fragment_grid_item_name_placeholder">Item Name</string>
+    <string name="shop_fragment_grid_item_price_placeholder">50</string>
+
     <!-- Cart Fragment -->
     <string name="shop_fragment_cart_item_name">Item Name</string>
     <string name="shop_fragment_cart_item_price_single">Price</string>
