@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/admin_add_et_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:gravity="end"
+        android:inputType="text"
+        android:text="@string/admin_fragment_add_product_item_name_placeholder"
+        android:textColor="@color/black_50p"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_add_tv_item_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/admin_add_tv_item_name"
+        app:layout_constraintTop_toTopOf="@+id/admin_add_tv_item_name"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="Autofill,LabelFor" />
+
+    <TextView
+        android:id="@+id/admin_add_tv_item_name"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/admin_fragment_add_product_item_name"
+        android:textColor="@color/black_75p"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/admin_add_et_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="end"
+        android:inputType="numberDecimal"
+        android:text="@string/admin_fragment_add_product_item_price_placeholder"
+        android:textColor="@color/black_50p"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_add_tv_item_price"
+        app:layout_constraintEnd_toEndOf="@+id/admin_add_et_item_name"
+        app:layout_constraintStart_toStartOf="@+id/admin_add_et_item_name"
+        app:layout_constraintTop_toTopOf="@+id/admin_add_tv_item_price"
+        tools:ignore="Autofill,LabelFor" />
+
+    <TextView
+        android:id="@+id/admin_add_tv_item_price"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/admin_fragment_add_product_item_price"
+        android:textColor="@color/black_75p"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/admin_add_tv_item_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/admin_add_tv_item_name"
+        app:layout_constraintTop_toBottomOf="@+id/admin_add_tv_item_name" />
+
+    <TextView
+        android:id="@+id/admin_add_tv_item_icon"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/admin_fragment_add_product_item_icon"
+        android:textColor="@color/black_75p"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/admin_add_tv_item_price"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/admin_add_tv_item_price"
+        app:layout_constraintTop_toBottomOf="@+id/admin_add_tv_item_price" />
+
+    <Button
+        android:id="@+id/admin_add_btn_add_item"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/admin_fragment_add_product_add_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/admin_add_et_item_price"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/admin_add_et_item_price"
+        app:layout_constraintTop_toBottomOf="@+id/admin_add_iv_item_icon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/admin_add_btn_add_icon"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/admin_fragment_add_product_add_icon"
+        app:layout_constraintEnd_toEndOf="@+id/admin_add_tv_item_icon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/admin_add_tv_item_icon"
+        app:layout_constraintTop_toBottomOf="@+id/admin_add_tv_item_icon" />
+
+    <ImageView
+        android:id="@+id/admin_add_iv_item_icon"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_add_btn_add_icon"
+        app:layout_constraintEnd_toEndOf="@+id/admin_add_et_item_price"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/admin_add_et_item_price"
+        app:layout_constraintTop_toBottomOf="@+id/admin_add_et_item_price"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- TODO: ImageView and Add Image button -->
+</androidx.constraintlayout.widget.ConstraintLayout>

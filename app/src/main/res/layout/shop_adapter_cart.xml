@@ -4,100 +4,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rounded_bg"
     android:layout_marginStart="@dimen/admin_adapter_product_list_margin_start_end"
     android:layout_marginTop="@dimen/admin_adapter_product_list_margin_top_bottom"
     android:layout_marginEnd="@dimen/admin_adapter_product_list_margin_start_end"
     android:layout_marginBottom="@dimen/admin_adapter_product_list_margin_top_bottom"
+    android:background="@drawable/rounded_bg"
     android:paddingBottom="@dimen/shop_adapter_cart_padding_bottom">
 
     <TextView
         android:id="@+id/shop_cart_tv_item_name"
-        android:layout_width="140dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/shop_adapter_cart_label_height"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="@string/shop_fragment_cart_item_name"
-        android:textSize="16sp"
+        android:textSize="@dimen/shop_adapter_cart_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/shop_cart_tv_item_price_single"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="@dimen/shop_adapter_cart_item_price_width"
+        android:layout_height="@dimen/shop_adapter_cart_label_height"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_item_price_single"
-        android:textSize="16sp"
+        android:textSize="@dimen/shop_adapter_cart_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/shop_cart_btn_remove"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_name"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/shop_cart_tv_item_price_total"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="@dimen/shop_adapter_cart_item_price_width"
+        android:layout_height="@dimen/shop_adapter_cart_label_height"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_item_price_total"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/shop_cart_btn_add"
+        android:textSize="@dimen/shop_adapter_cart_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/shop_cart_btn_delete"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/shop_cart_tv_item_qty"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="@dimen/shop_adapter_cart_item_qty_width"
+        android:layout_height="@dimen/shop_adapter_cart_label_height"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_item_qty"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/shop_cart_btn_remove"
+        android:textSize="@dimen/shop_adapter_cart_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/shop_cart_btn_add"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/shop_cart_btn_remove"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/shop_adapter_cart_btn_size"
+        android:layout_height="@dimen/shop_adapter_cart_btn_size"
+        android:layout_marginTop="12dp"
         android:gravity="center"
+        android:src="@drawable/ic_remove_button_black"
         android:text="@string/shop_fragment_cart_item_qty_remove"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_price_single"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/shop_cart_tv_item_qty"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SmallSp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/shop_cart_btn_add"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/shop_adapter_cart_btn_size"
+        android:layout_height="@dimen/shop_adapter_cart_btn_size"
+        android:layout_marginTop="12dp"
         android:gravity="center"
+        android:src="@drawable/ic_add_button_black"
         android:text="@string/shop_fragment_cart_item_qty_add"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_qty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/shop_cart_tv_item_price_total"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071"
         tools:ignore="SmallSp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/shop_cart_btn_delete"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/shop_adapter_cart_btn_size"
+        android:layout_height="@dimen/shop_adapter_cart_btn_size"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
+        android:src="@drawable/ic_remove_shopping_cart_button_black"
         android:text="@string/shop_fragment_cart_item_delete"
-        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_price_total"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SmallSp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

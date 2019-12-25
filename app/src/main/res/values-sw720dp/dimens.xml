@@ -1,0 +1,33 @@
+<resources>
+    <!-- Adapter Item -->
+
+    <!-- Admin Activity -->
+    <!-- Product List Fragment -->
+    <dimen name="admin_fragment_product_list_text_size">20sp</dimen>
+    <dimen name="admin_fragment_product_list_button_text_size">15sp</dimen>
+    <dimen name="admin_fragment_product_list_header_text_size">15sp</dimen>
+    <dimen name="admin_fragment_product_list_icon_size">45dp</dimen>
+    <dimen name="admin_fragment_product_list_box_height">45dp</dimen>
+    <dimen name="admin_fragment_product_list_item_name_width">160dp</dimen>
+    <dimen name="admin_fragment_product_list_item_price_width">75dp</dimen>
+    <dimen name="admin_fragment_product_list_button_remove_size">45dp</dimen>
+    <dimen name="admin_fragment_product_list_header_box_height">30dp</dimen>
+    <dimen name="admin_adapter_product_list_margin_top_bottom">2.5dp</dimen>
+    <dimen name="admin_adapter_product_list_margin_start_end">5dp</dimen>
+    <dimen name="admin_adapter_product_list_padding_bottom">10dp</dimen>
+
+    <!-- Shop Activity -->
+    <!-- Cart Fragment -->
+    <dimen name="shop_adapter_cart_margin_top_bottom">1.5dp</dimen>
+    <dimen name="shop_adapter_cart_margin_start_end">5dp</dimen>
+    <dimen name="shop_adapter_cart_padding_bottom">10dp</dimen>
+    <dimen name="shop_adapter_cart_btn_size">45dp</dimen>
+    <dimen name="shop_adapter_cart_label_height">60dp</dimen>
+    <dimen name="shop_adapter_cart_item_price_width">100dp</dimen>
+    <dimen name="shop_adapter_cart_item_qty_width">60dp</dimen>
+    <dimen name="shop_adapter_cart_text_size">16sp</dimen>
+    <dimen name="shop_adapter_cart_checkout_button_text_size">16sp</dimen>
+    <dimen name="shop_adapter_cart_checkout_width">120dp</dimen>
+    <dimen name="shop_adapter_cart_checkout_label_total_width">70dp</dimen>
+
+</resources>

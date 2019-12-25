@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.jgt.pos.R;
@@ -49,7 +50,7 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
     class ProductCartListItemViewHolder extends RecyclerView.ViewHolder {
         Cart cartItem;
         TextView tvItemName, tvItemPriceSingle, tvItemPriceTotal, tvItemQty;
-        Button btnAdd, btnRemove, btnDelete;
+        ImageButton btnAdd, btnRemove, btnDelete;
 
         ProductCartListItemViewHolder(@NonNull View itemView) {
             super(itemView);
