@@ -8,8 +8,7 @@
     tools:context=".ui.admin.AdminActivity"
     tools:showIn="@layout/admin_activity">
 
-    <include
-        layout="@layout/admin_activity_fragment_container" />
+    <include layout="@layout/admin_activity_fragment_container" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/nav_appbar_view_admin"

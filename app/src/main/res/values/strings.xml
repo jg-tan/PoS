@@ -21,9 +21,11 @@
     <!-- Add Product Fragment -->
     <string name="admin_fragment_add_product_item_name">Item Name</string>
     <string name="admin_fragment_add_product_item_price">Item Price</string>
-    <string name="admin_fragment_add_product_item_name_placeholder">Name</string>
+    <string name="admin_fragment_add_product_item_icon">Item Icon</string>
+    <string name="admin_fragment_add_product_item_name_placeholder">Item name</string>
     <string name="admin_fragment_add_product_item_price_placeholder">0</string>
     <string name="admin_fragment_add_product_add_item">Add Item</string>
+    <string name="admin_fragment_add_product_add_icon">Add Icon</string>
 
     <!-- Shop Activity -->
     <!-- Cart Fragment -->
@@ -36,5 +38,6 @@
     <string name="shop_fragment_cart_item_delete">X</string>
     <string name="shop_fragment_cart_checkout">Checkout</string>
     <string name="shop_fragment_cart_cart_total">Total</string>
+    <string name="shop_fragment_cart_cart_total_placeholder">10000</string>
 
 </resources>

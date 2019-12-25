@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rounded_bg"
-    android:layout_marginStart="@dimen/admin_adapter_product_list_margin_start_end"
-    android:layout_marginTop="@dimen/admin_adapter_product_list_margin_top_bottom"
-    android:layout_marginEnd="@dimen/admin_adapter_product_list_margin_start_end"
-    android:layout_marginBottom="@dimen/admin_adapter_product_list_margin_top_bottom"
+    android:layout_marginStart="@dimen/shop_adapter_cart_margin_start_end"
+    android:layout_marginTop="@dimen/shop_adapter_cart_margin_top_bottom"
+    android:layout_marginEnd="@dimen/shop_adapter_cart_margin_start_end"
+    android:layout_marginBottom="@dimen/shop_adapter_cart_margin_top_bottom"
     android:paddingBottom="@dimen/shop_adapter_cart_padding_bottom">
 
     <TextView

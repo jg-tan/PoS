@@ -5,6 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+@SuppressWarnings("NullableProblems")
 @Entity
 public class Item {
     @NonNull
@@ -15,6 +16,7 @@ public class Item {
     @ColumnInfo(name = "item_price")
     private int price;
 
+    //TODO: Consider saving icon path instead as a STRING
     @ColumnInfo(name = "item_icon", typeAffinity = ColumnInfo.BLOB)
     private byte[] icon;
 

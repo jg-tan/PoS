@@ -1,5 +1,6 @@
 package com.jgt.pos.ui.shop.cart;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
         return 0;
     }
 
-    public void setCartItems(List<Cart> cartItems) {
+    void setCartItems(List<Cart> cartItems) {
         this.cartItems = cartItems;
     }
 
@@ -50,7 +51,7 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
         TextView tvItemName, tvItemPriceSingle, tvItemPriceTotal, tvItemQty;
         Button btnAdd, btnRemove, btnDelete;
 
-        public ProductCartListItemViewHolder(@NonNull View itemView) {
+        ProductCartListItemViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tvItemName = itemView.findViewById(R.id.shop_cart_tv_item_name);
             this.tvItemPriceSingle = itemView.findViewById(R.id.shop_cart_tv_item_price_single);
@@ -61,12 +62,13 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
             this.btnDelete = itemView.findViewById(R.id.shop_cart_btn_delete);
         }
 
-        public void setCartItem(Cart cartItem) {
+        @SuppressLint("SetTextI18n")
+        void setCartItem(Cart cartItem) {
             this.cartItem = cartItem;
             String name = cartItem.getName();
             int priceSingle = cartItem.getPrice();
             int qty = cartItem.getQuantity();
-            int priceTotal = priceSingle*qty;
+            int priceTotal = priceSingle * qty;
             tvItemName.setText(name);
             tvItemPriceSingle.setText(Integer.toString(priceSingle));
             tvItemPriceTotal.setText(Integer.toString(priceTotal));

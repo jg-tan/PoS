@@ -30,7 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * - On Delete Clicked:
  * ---- get total price
  * ---- subtract from LiveData sum
- * */
+ */
 public class ShopCartFragment extends Fragment {
 
     private RecyclerView rvListView;
@@ -53,7 +53,7 @@ public class ShopCartFragment extends Fragment {
         rvListView = rootView.findViewById(R.id.shop_cart_fragment_rv_cart_items);
         adapter = new ShopCartListAdapter();
         layoutManager = new LinearLayoutManager(activity);
-        adapter.setCartItems(TestUtils.getTestItemList());
+        adapter.setCartItems(TestUtils.getTestCartList());
         rvListView.setHasFixedSize(true);
         rvListView.setLayoutManager(layoutManager);
         rvListView.setAdapter(adapter);
