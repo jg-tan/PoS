@@ -30,4 +30,5 @@
     <dimen name="shop_adapter_cart_checkout_width">80dp</dimen>
     <dimen name="shop_adapter_cart_checkout_label_total_width">50dp</dimen>
 
+
 </resources>
