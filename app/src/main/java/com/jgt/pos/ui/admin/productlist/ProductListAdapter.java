@@ -1,8 +1,12 @@
 package com.jgt.pos.ui.admin.productlist;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jgt.pos.R;
 import com.jgt.pos.database.itemdb.Item;
@@ -14,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ProductListItemViewHolder> {
 
-    List<Item> items;
+    private List<Item> productList;
 
     @NonNull
     @Override
@@ -27,26 +31,43 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ProductListItemViewHolder holder, int position) {
-        holder.setProductItem(items.get(position));
+        holder.setProductItem(productList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        if(null != items) {
-            return items.size();
+        if (null != productList) {
+            return productList.size();
         }
         return 0;
     }
 
+    void setProductList(List<Item> productList) {
+        this.productList = productList;
+    }
+
     class ProductListItemViewHolder extends RecyclerView.ViewHolder {
         Item item;
+        TextView tvItemName, tvItemPrice;
+        ImageButton btnDelete;
+        ImageView ivItemIcon;
 
-        public void setProductItem(Item item) {
-            this.item = item;
+        ProductListItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+            this.tvItemName = itemView.findViewById(R.id.admin_product_list_tv_item_name);
+            this.tvItemPrice = itemView.findViewById(R.id.admin_product_list_tv_item_price);
+            this.btnDelete = itemView.findViewById(R.id.admin_product_list_btn_delete);
+            this.ivItemIcon = itemView.findViewById(R.id.admin_product_list_iv_item_icon);
         }
 
-        public ProductListItemViewHolder(@NonNull View itemView) {
-            super(itemView);
+        @SuppressLint("SetTextI18n")
+        void setProductItem(Item item) {
+            this.item = item;
+            String name = item.getName();
+            int price = item.getPrice();
+            byte[] icon = item.getIcon();
+            tvItemName.setText(name);
+            tvItemPrice.setText(Integer.toString(price));
         }
     }
 }

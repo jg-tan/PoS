@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="10dp">
@@ -11,19 +12,20 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:textSize="10sp"
         android:text="@string/shop_fragment_cart_checkout"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/shop_cart_tv_total_label"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="104dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/shop_fragment_cart_item_price_total"
+        android:text="@string/shop_fragment_cart_cart_total"
         app:layout_constraintStart_toEndOf="@+id/shop_cart_btn_checkout"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,10 +35,10 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="34dp"
-        android:text="TextView"
         android:gravity="end|center_vertical"
+        android:text="@string/shop_fragment_cart_cart_total_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_total_label"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,8 +1,24 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <!-- Adapter Item -->
+
+    <!-- Admin Activity -->
+    <!-- Product List Fragment -->
+    <dimen name="admin_fragment_product_list_text_size">20sp</dimen>
+    <dimen name="admin_fragment_product_list_button_text_size">15sp</dimen>
+    <dimen name="admin_fragment_product_list_header_text_size">15sp</dimen>
+    <dimen name="admin_fragment_product_list_icon_size">45dp</dimen>
+    <dimen name="admin_fragment_product_list_box_height">45dp</dimen>
+    <dimen name="admin_fragment_product_list_item_name_width">160dp</dimen>
+    <dimen name="admin_fragment_product_list_item_price_width">75dp</dimen>
+    <dimen name="admin_fragment_product_list_button_remove_size">45dp</dimen>
+    <dimen name="admin_fragment_product_list_header_box_height">30dp</dimen>
+    <dimen name="admin_adapter_product_list_margin_top_bottom">2.5dp</dimen>
+    <dimen name="admin_adapter_product_list_margin_start_end">5dp</dimen>
+    <dimen name="admin_adapter_product_list_padding_bottom">10dp</dimen>
+
+    <!-- Shop Activity -->
+    <dimen name="shop_adapter_cart_margin_top_bottom">1.5dp</dimen>
+    <dimen name="shop_adapter_cart_margin_start_end">5dp</dimen>
+    <dimen name="shop_adapter_cart_padding_bottom">10dp</dimen>
+
 </resources>
