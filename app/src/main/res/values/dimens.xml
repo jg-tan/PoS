@@ -30,5 +30,10 @@
     <dimen name="shop_adapter_cart_checkout_width">80dp</dimen>
     <dimen name="shop_adapter_cart_checkout_label_total_width">50dp</dimen>
 
+    <!-- Grid Fragment -->
+    <dimen name="shop_adapter_grid_icon_size">60dp</dimen>
+    <dimen name="shop_adapter_grid_label_width">100dp</dimen>
+    <dimen name="shop_adapter_grid_item_name_height">25dp</dimen>
+    <dimen name="shop_adapter_grid_item_price_height">18dp</dimen>
 
 </resources>
