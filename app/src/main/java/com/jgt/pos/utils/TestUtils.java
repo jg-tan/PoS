@@ -1,7 +1,7 @@
 package com.jgt.pos.utils;
 
-import com.jgt.pos.database.cartdb.Cart;
-import com.jgt.pos.database.itemdb.Item;
+import com.jgt.pos.database.cart.Cart;
+import com.jgt.pos.database.item.Item;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.jgt.pos.R;
+import com.jgt.pos.database.item.Item;
+import com.jgt.pos.database.item.ItemRepository;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,10 +38,13 @@ public class AddProductFragment extends Fragment {
     }
 
     public void onAddIconClicked(View view) {
-
     }
 
     public void onAddItemClicked(View view) {
-
+        Item item = new Item();
+        item.setName(etName.getText().toString());
+        item.setPrice(Integer.parseInt(etPrice.getText().toString()));
+        item.setIcon(null); //TODO
+        ItemRepository.getInstance().addItem(item);
     }
 }

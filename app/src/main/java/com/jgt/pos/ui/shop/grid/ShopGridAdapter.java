@@ -4,13 +4,11 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jgt.pos.R;
-import com.jgt.pos.database.itemdb.Item;
-import com.jgt.pos.ui.admin.productlist.ProductListAdapter;
+import com.jgt.pos.database.item.Item;
 
 import java.util.List;
 
@@ -45,6 +43,7 @@ public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.GridIt
 
     void setProductList(List<Item> productList) {
         this.productList = productList;
+        notifyDataSetChanged();
     }
 
     class GridItemViewHolder extends RecyclerView.ViewHolder {

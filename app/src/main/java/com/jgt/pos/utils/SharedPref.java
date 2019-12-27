@@ -30,6 +30,6 @@ public class SharedPref {
     }
 
     public String getPassword() {
-        return pref.getString(Constants.ADMIN_PASSWORD, "");
+        return pref.getString(Constants.ADMIN_PASSWORD, Constants.DEFAULT_PASSWORD);
     }
 }

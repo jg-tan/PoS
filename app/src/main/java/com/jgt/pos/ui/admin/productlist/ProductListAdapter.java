@@ -9,7 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jgt.pos.R;
-import com.jgt.pos.database.itemdb.Item;
+import com.jgt.pos.database.item.Item;
+import com.jgt.pos.database.item.ItemViewModel;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ProductListItemViewHolder> {
 
     private List<Item> productList;
+    private View.OnClickListener listener;
 
     @NonNull
     @Override
@@ -44,6 +46,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     void setProductList(List<Item> productList) {
         this.productList = productList;
+        notifyDataSetChanged();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
     }
 
     class ProductListItemViewHolder extends RecyclerView.ViewHolder {
@@ -58,11 +65,13 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             this.tvItemPrice = itemView.findViewById(R.id.admin_product_list_tv_item_price);
             this.btnDelete = itemView.findViewById(R.id.admin_product_list_btn_delete);
             this.ivItemIcon = itemView.findViewById(R.id.admin_product_list_iv_item_icon);
+            this.btnDelete.setOnClickListener(listener);
         }
 
         @SuppressLint("SetTextI18n")
         void setProductItem(Item item) {
             this.item = item;
+            this.btnDelete.setTag(item);
             String name = item.getName();
             int price = item.getPrice();
             byte[] icon = item.getIcon();
