@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/shop_grid_iv_item_icon"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="@dimen/shop_adapter_grid_icon_size"
+        android:layout_height="@dimen/shop_adapter_grid_icon_size"
         android:src="@drawable/ic_settings_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,8 +18,8 @@
 
     <TextView
         android:id="@+id/shop_grid_tv_item_price"
-        android:layout_width="140dp"
-        android:layout_height="20dp"
+        android:layout_width="@dimen/shop_adapter_grid_label_width"
+        android:layout_height="@dimen/shop_adapter_grid_item_price_height"
         android:gravity="center"
         android:text="@string/shop_fragment_grid_item_price_placeholder"
         android:textSize="12sp"
@@ -30,8 +30,8 @@
 
     <TextView
         android:id="@+id/shop_grid_tv_item_name"
-        android:layout_width="140dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/shop_adapter_grid_label_width"
+        android:layout_height="@dimen/shop_adapter_grid_item_name_height"
         android:gravity="center"
         android:text="@string/shop_fragment_grid_item_name_placeholder"
         android:textSize="16sp"

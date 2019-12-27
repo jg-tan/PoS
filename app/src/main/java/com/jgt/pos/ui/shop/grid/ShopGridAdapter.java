@@ -1,52 +1,71 @@
 package com.jgt.pos.ui.shop.grid;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jgt.pos.R;
-import com.jgt.pos.database.itemdb.Item;
+import com.jgt.pos.database.item.Item;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.ProductGrViewHolder> {
+public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.GridItemViewHolder> {
 
-    List<Item> items;
+    private List<Item> productList;
 
     @NonNull
     @Override
-    public ProductGrViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public GridItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.shop_adapter_grid, parent, false);
-        return new ProductGrViewHolder(view);
+        return new GridItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductGrViewHolder holder, int position) {
-        holder.setProductItem(items.get(position));
+    public void onBindViewHolder(@NonNull GridItemViewHolder holder, int position) {
+        holder.setProductItem(productList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        if(null != items) {
-            return items.size();
+        if (null != productList) {
+            return productList.size();
         }
         return 0;
     }
 
-    class ProductGrViewHolder extends RecyclerView.ViewHolder {
-        Item item;
+    void setProductList(List<Item> productList) {
+        this.productList = productList;
+        notifyDataSetChanged();
+    }
 
-        public void setProductItem(Item item) {
-            this.item = item;
+    class GridItemViewHolder extends RecyclerView.ViewHolder {
+        Item item;
+        TextView tvItemName, tvItemPrice;
+        ImageView ivItemIcon;
+
+        GridItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+            this.tvItemName = itemView.findViewById(R.id.shop_grid_tv_item_name);
+            this.tvItemPrice = itemView.findViewById(R.id.shop_grid_tv_item_price);
+            this.ivItemIcon = itemView.findViewById(R.id.shop_grid_iv_item_icon);
         }
 
-        public ProductGrViewHolder(@NonNull View itemView) {
-            super(itemView);
+        @SuppressLint("SetTextI18n")
+        void setProductItem(Item item) {
+            this.item = item;
+            String name = item.getName();
+            int price = item.getPrice();
+            byte[] icon = item.getIcon();
+            tvItemName.setText(name);
+            tvItemPrice.setText(Integer.toString(price));
         }
     }
 }

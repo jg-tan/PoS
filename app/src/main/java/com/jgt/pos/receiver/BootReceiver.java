@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.jgt.pos.ui.shop.ShopActivity;
+import com.jgt.pos.utils.Constants;
+import com.jgt.pos.utils.SharedPref;
 
 public class BootReceiver extends BroadcastReceiver {
     @Override
@@ -12,7 +14,11 @@ public class BootReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if(Intent.ACTION_BOOT_COMPLETED.equals(action)) {
-            context.startActivity(new Intent(context, ShopActivity.class));
+            //TODO: Set device to kiosk mode if locked
+            String password = SharedPref.get().getPassword();
+            if(!Constants.DEFAULT_PASSWORD.equals(password)) {
+                context.startActivity(new Intent(context, ShopActivity.class));
+            }
         }
     }
 }

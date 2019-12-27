@@ -4,12 +4,11 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.jgt.pos.R;
-import com.jgt.pos.database.cartdb.Cart;
+import com.jgt.pos.database.cart.Cart;
 
 import java.util.List;
 
