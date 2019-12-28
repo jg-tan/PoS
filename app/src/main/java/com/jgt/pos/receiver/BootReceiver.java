@@ -13,10 +13,10 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
 
-        if(Intent.ACTION_BOOT_COMPLETED.equals(action)) {
+        if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
             //TODO: Set device to kiosk mode if locked
             String password = SharedPref.get().getPassword();
-            if(!Constants.DEFAULT_PASSWORD.equals(password)) {
+            if (!Constants.DEFAULT_PASSWORD.equals(password)) {
                 context.startActivity(new Intent(context, ShopActivity.class));
             }
         }

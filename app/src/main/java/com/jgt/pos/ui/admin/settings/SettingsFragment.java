@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
  * 2. Lock/Unlock (Slider)
  * 3. Change password
  * 4. Delete Sales -> Ask for password
- * */
+ */
 public class SettingsFragment extends Fragment {
 
     @Nullable

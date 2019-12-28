@@ -9,7 +9,7 @@
         android:id="@+id/shop_nav_grid_fragment"
         android:name="com.jgt.pos.ui.shop.grid.ShopGridFragment"
         android:label="@string/shop_fragment_grid_title"
-        tools:layout="@layout/shop_fragment_grid" >
+        tools:layout="@layout/shop_fragment_grid">
         <action
             android:id="@+id/on_cart_clicked"
             app:destination="@id/shop_nav_cart_fragment" />

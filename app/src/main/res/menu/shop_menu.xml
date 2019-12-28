@@ -4,15 +4,15 @@
 
     <item
         android:id="@+id/shop_nav_admin_fragment"
+        android:icon="@drawable/ic_settings_white"
         android:orderInCategory="100"
         android:title="@string/shop_menu_open_admin"
-        android:icon="@drawable/ic_settings_white"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/shop_nav_cart_fragment"
-        android:orderInCategory="1"
         android:icon="@drawable/ic_shopping_cart_white"
+        android:orderInCategory="1"
         android:title="@string/shop_menu_cart"
         app:showAsAction="ifRoom" />
 

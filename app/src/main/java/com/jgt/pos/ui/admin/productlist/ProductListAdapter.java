@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.jgt.pos.R;
 import com.jgt.pos.database.item.Item;
-import com.jgt.pos.database.item.ItemViewModel;
 
 import java.util.List;
 
@@ -49,7 +48,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         notifyDataSetChanged();
     }
 
-    public void setOnClickListener(View.OnClickListener listener) {
+    void setOnClickListener(View.OnClickListener listener) {
         this.listener = listener;
     }
 

@@ -5,7 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "cart_table")
 public class Cart {
     @NonNull
     @PrimaryKey
@@ -14,9 +14,6 @@ public class Cart {
 
     @ColumnInfo(name = "cart_price")
     private int price;
-
-    @ColumnInfo(name = "cart_icon", typeAffinity = ColumnInfo.BLOB)
-    private byte[] icon;
 
     @ColumnInfo(name = "cart_quantity")
     private int quantity;
@@ -36,14 +33,6 @@ public class Cart {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public byte[] getIcon() {
-        return icon;
-    }
-
-    public void setIcon(byte[] icon) {
-        this.icon = icon;
     }
 
     public int getQuantity() {
