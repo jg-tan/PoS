@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jgt.pos.R;
+import com.jgt.pos.database.cart.CartViewModel;
 import com.jgt.pos.database.item.Item;
 import com.jgt.pos.database.item.ItemViewModel;
 
@@ -16,17 +17,19 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ShopGridFragment extends Fragment {
+public class ShopGridFragment extends Fragment implements View.OnClickListener {
 
     private RecyclerView rvListView;
     private GridLayoutManager layoutManager;
     private ShopGridAdapter adapter;
     private View rootView;
-    private ItemViewModel viewModel;
+    private ItemViewModel itemViewModel;
+    private CartViewModel cartViewModel;
 
     @Nullable
     @Override
@@ -39,9 +42,13 @@ public class ShopGridFragment extends Fragment {
     }
 
     private void initViewModel() {
-        viewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
-        viewModel.init();
-        viewModel.getItems().observe(this, this::onItemListChanged);
+        ViewModelProvider provider = ViewModelProviders.of(this);
+        itemViewModel = provider.get(ItemViewModel.class);
+        itemViewModel.init();
+        itemViewModel.getItems().observe(this, this::onItemListChanged);
+
+        cartViewModel = provider.get(CartViewModel.class);
+        cartViewModel.init();
     }
 
     private void onItemListChanged(List<Item> items) {
@@ -52,9 +59,23 @@ public class ShopGridFragment extends Fragment {
         Activity activity = getActivity();
         rvListView = rootView.findViewById(R.id.shop_grid_fragment_rv_item_list);
         adapter = new ShopGridAdapter();
+        adapter.setOnClickListener(this);
         layoutManager = new GridLayoutManager(activity, 4);
         rvListView.setHasFixedSize(true);
         rvListView.setLayoutManager(layoutManager);
         rvListView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.shop_grid_btn_item:
+                Item item = (Item) v.getTag();
+                cartViewModel.addToCart(item);
+                break;
+            default:
+                break;
+        }
     }
 }

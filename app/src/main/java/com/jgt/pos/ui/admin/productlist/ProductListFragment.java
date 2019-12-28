@@ -31,7 +31,7 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
     private LinearLayoutManager layoutManager;
     private ProductListAdapter adapter;
     private View rootView;
-    private ItemViewModel viewModel;
+    private ItemViewModel itemViewModel;
 
     @Nullable
     @Override
@@ -45,9 +45,9 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
     }
 
     private void initViewModel() {
-        viewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
-        viewModel.init();
-        viewModel.getItems().observe(this, this::onItemListChanged);
+        itemViewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
+        itemViewModel.init();
+        itemViewModel.getItems().observe(this, this::onItemListChanged);
     }
 
     private void onItemListChanged(List<Item> items) {
@@ -76,7 +76,7 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
         switch (id) {
             case R.id.admin_product_list_btn_delete:
                 Item item = (Item) v.getTag();
-                viewModel.deleteItem(item.getName());
+                itemViewModel.deleteItem(item.getName());
                 break;
             default:
                 break;

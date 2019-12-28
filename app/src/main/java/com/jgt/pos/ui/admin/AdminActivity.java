@@ -19,7 +19,7 @@ import androidx.navigation.ui.NavigationUI;
 /**
  * 1. Navigation Drawer
  * 2. Fragment Container
- * */
+ */
 public class AdminActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;

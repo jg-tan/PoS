@@ -1,4 +1,6 @@
 package com.jgt.pos.ui.shop.cart;
 
-public class ShopCartViewModel {
+import androidx.lifecycle.ViewModel;
+
+public class ShopCartViewModel extends ViewModel {
 }

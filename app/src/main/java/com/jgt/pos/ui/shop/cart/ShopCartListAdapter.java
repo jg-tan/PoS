@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.jgt.pos.R;
 import com.jgt.pos.database.cart.Cart;
+import com.jgt.pos.database.item.Item;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapter.ProductCartListItemViewHolder> {
 
     private List<Cart> cartItems;
+    private View.OnClickListener listener;
 
     @NonNull
     @Override
@@ -43,13 +45,18 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
 
     void setCartItems(List<Cart> cartItems) {
         this.cartItems = cartItems;
+        notifyDataSetChanged();
+    }
+
+    void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
     }
 
     //TODO: change to live data and add click listeners
     class ProductCartListItemViewHolder extends RecyclerView.ViewHolder {
         Cart cartItem;
         TextView tvItemName, tvItemPriceSingle, tvItemPriceTotal, tvItemQty;
-        ImageButton btnAdd, btnRemove, btnDelete;
+        ImageButton btnAddQty, btnRemoveQty, btnDelete;
 
         ProductCartListItemViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,9 +64,12 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
             this.tvItemPriceSingle = itemView.findViewById(R.id.shop_cart_tv_item_price_single);
             this.tvItemPriceTotal = itemView.findViewById(R.id.shop_cart_tv_item_price_total);
             this.tvItemQty = itemView.findViewById(R.id.shop_cart_tv_item_qty);
-            this.btnAdd = itemView.findViewById(R.id.shop_cart_btn_add);
-            this.btnRemove = itemView.findViewById(R.id.shop_cart_btn_remove);
+            this.btnAddQty = itemView.findViewById(R.id.shop_cart_btn_add_qty);
+            this.btnRemoveQty = itemView.findViewById(R.id.shop_cart_btn_remove_qty);
             this.btnDelete = itemView.findViewById(R.id.shop_cart_btn_delete);
+            this.btnAddQty.setOnClickListener(listener);
+            this.btnRemoveQty.setOnClickListener(listener);
+            this.btnDelete.setOnClickListener(listener);
         }
 
         @SuppressLint("SetTextI18n")
@@ -73,6 +83,13 @@ public class ShopCartListAdapter extends RecyclerView.Adapter<ShopCartListAdapte
             tvItemPriceSingle.setText(Integer.toString(priceSingle));
             tvItemPriceTotal.setText(Integer.toString(priceTotal));
             tvItemQty.setText(Integer.toString(qty));
+
+            Item item = new Item();
+            item.setName(name);
+            item.setPrice(priceSingle);
+            this.btnAddQty.setTag(item);
+            this.btnRemoveQty.setTag(item);
+            this.btnDelete.setTag(item);
         }
     }
 }

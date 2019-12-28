@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 /**
  * 1. Can change PRICE
- * */
+ */
 public class EditProductFragment extends Fragment {
 
     @Nullable

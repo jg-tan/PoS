@@ -16,7 +16,7 @@ public class SharedPref {
     }
 
     public static SharedPref get() {
-        if(null == instance) {
+        if (null == instance) {
             synchronized (SharedPref.class) {
                 instance = new SharedPref();
             }
@@ -24,12 +24,12 @@ public class SharedPref {
         return instance;
     }
 
+    public String getPassword() {
+        return pref.getString(Constants.ADMIN_PASSWORD, Constants.DEFAULT_PASSWORD);
+    }
+
     public void setPassword(String password) {
         editor.putString(Constants.ADMIN_PASSWORD, password);
         editor.commit();
-    }
-
-    public String getPassword() {
-        return pref.getString(Constants.ADMIN_PASSWORD, Constants.DEFAULT_PASSWORD);
     }
 }

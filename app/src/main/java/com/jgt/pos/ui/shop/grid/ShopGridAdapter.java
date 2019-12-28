@@ -13,11 +13,13 @@ import com.jgt.pos.database.item.Item;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.GridItemViewHolder> {
 
     private List<Item> productList;
+    private View.OnClickListener listener;
 
     @NonNull
     @Override
@@ -46,21 +48,29 @@ public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.GridIt
         notifyDataSetChanged();
     }
 
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
     class GridItemViewHolder extends RecyclerView.ViewHolder {
         Item item;
         TextView tvItemName, tvItemPrice;
         ImageView ivItemIcon;
+        ConstraintLayout btnItem;
 
         GridItemViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tvItemName = itemView.findViewById(R.id.shop_grid_tv_item_name);
             this.tvItemPrice = itemView.findViewById(R.id.shop_grid_tv_item_price);
             this.ivItemIcon = itemView.findViewById(R.id.shop_grid_iv_item_icon);
+            this.btnItem = itemView.findViewById(R.id.shop_grid_btn_item);
+            this.btnItem.setOnClickListener(listener);
         }
 
         @SuppressLint("SetTextI18n")
         void setProductItem(Item item) {
             this.item = item;
+            this.btnItem.setTag(item);
             String name = item.getName();
             int price = item.getPrice();
             byte[] icon = item.getIcon();
