@@ -21,7 +21,7 @@
     <dimen name="shop_adapter_cart_margin_top_bottom">1.5dp</dimen>
     <dimen name="shop_adapter_cart_margin_start_end">5dp</dimen>
     <dimen name="shop_adapter_cart_padding_bottom">10dp</dimen>
-    <dimen name="shop_adapter_cart_btn_size">30dp</dimen>
+    <dimen name="shop_adapter_cart_btn_size">37dp</dimen>
     <dimen name="shop_adapter_cart_label_height">40dp</dimen>
     <dimen name="shop_adapter_cart_item_price_width">50dp</dimen>
     <dimen name="shop_adapter_cart_item_qty_width">30dp</dimen>

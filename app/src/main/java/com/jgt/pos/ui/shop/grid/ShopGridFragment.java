@@ -1,6 +1,5 @@
 package com.jgt.pos.ui.shop.grid;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +10,7 @@ import com.jgt.pos.R;
 import com.jgt.pos.database.cart.CartViewModel;
 import com.jgt.pos.database.item.Item;
 import com.jgt.pos.database.item.ItemViewModel;
+import com.jgt.pos.ui.shop.ShopActivity;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ShopGridFragment extends Fragment implements View.OnClickListener {
+public class ShopGridFragment extends Fragment {
 
     private RecyclerView rvListView;
     private GridLayoutManager layoutManager;
@@ -30,6 +30,7 @@ public class ShopGridFragment extends Fragment implements View.OnClickListener {
     private View rootView;
     private ItemViewModel itemViewModel;
     private CartViewModel cartViewModel;
+    private ShopActivity activity;
 
     @Nullable
     @Override
@@ -56,18 +57,18 @@ public class ShopGridFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initRecyclerView() {
-        Activity activity = getActivity();
+        activity = (ShopActivity) getActivity();
+        activity.showCartButton();
         rvListView = rootView.findViewById(R.id.shop_grid_fragment_rv_item_list);
         adapter = new ShopGridAdapter();
-        adapter.setOnClickListener(this);
+        adapter.setOnClickListener(this::onAdapterClicked);
         layoutManager = new GridLayoutManager(activity, 4);
         rvListView.setHasFixedSize(true);
         rvListView.setLayoutManager(layoutManager);
         rvListView.setAdapter(adapter);
     }
 
-    @Override
-    public void onClick(View v) {
+    private void onAdapterClicked(View v) {
         int id = v.getId();
         switch (id) {
             case R.id.shop_grid_btn_item:
