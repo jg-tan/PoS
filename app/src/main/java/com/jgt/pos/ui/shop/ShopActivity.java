@@ -7,10 +7,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jgt.pos.R;
+import com.jgt.pos.database.cart.Cart;
+import com.jgt.pos.database.cart.CartViewModel;
 import com.jgt.pos.ui.admin.AdminActivity;
+import com.jgt.pos.utils.ContextManager;
+
+import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -19,6 +26,8 @@ import androidx.navigation.ui.NavigationUI;
 public class ShopActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private MenuItem menuCart;
+    private CartViewModel cartViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +46,24 @@ public class ShopActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.shop_menu, menu);
+        menuCart = menu.findItem(R.id.shop_nav_cart_fragment);
+        initCartViewModel();
         return true;
+    }
+
+    private void initCartViewModel() {
+        ViewModelProvider provider = ViewModelProviders.of(this);
+        cartViewModel = provider.get(CartViewModel.class);
+        cartViewModel.init();
+        cartViewModel.getCart().observe(this, this::onCartChanged);
+    }
+
+    private void onCartChanged(List<Cart> cart) {
+        if (null == cart || cart.isEmpty()) {
+            disableCartButton();
+        } else {
+            enableCartButton();
+        }
     }
 
     @Override
@@ -61,5 +87,27 @@ public class ShopActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    public void disableCartButton() {
+        menuCart.setEnabled(false);
+        menuCart.setIcon(ContextManager.get().getDrawable(R.drawable.ic_shopping_cart_white_50p));
+    }
+
+    public void enableCartButton() {
+        menuCart.setEnabled(true);
+        menuCart.setIcon(ContextManager.get().getDrawable(R.drawable.ic_shopping_cart_white));
+    }
+
+    public void showCartButton() {
+        if (null != menuCart) {
+            menuCart.setVisible(true);
+        }
+    }
+
+    public void hideCartButton() {
+        if (null != menuCart) {
+            menuCart.setVisible(false);
+        }
     }
 }

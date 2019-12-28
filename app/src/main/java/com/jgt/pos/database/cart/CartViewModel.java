@@ -37,4 +37,8 @@ public class CartViewModel extends ViewModel {
     public void deleteFromCart(Item item) {
         CartRepository.getInstance().deleteFromCart(item.getName());
     }
+
+    public void deleteAll() {
+        CartRepository.getInstance().deleteAll();
+    }
 }

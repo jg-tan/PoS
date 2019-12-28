@@ -48,4 +48,8 @@ public class CartRepository {
     public void removeFromCart(Item item) {
         mExecutor.submit(() -> cartDao.removeFromCart(item));
     }
+
+    public void deleteAll() {
+        mExecutor.submit(cartDao::deleteAll);
+    }
 }
