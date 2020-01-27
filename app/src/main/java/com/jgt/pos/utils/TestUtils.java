@@ -18,10 +18,7 @@ public class TestUtils {
     }
 
     private static Cart createCartItem(String name, int price, int qty) {
-        Cart cart = new Cart();
-        cart.setName(name);
-        cart.setPrice(price);
-        cart.setQuantity(qty);
+        Cart cart = new Cart(name, price, qty);
         return cart;
     }
 

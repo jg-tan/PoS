@@ -65,6 +65,7 @@
         android:gravity="center"
         android:src="@drawable/ic_remove_black"
         android:text="@string/shop_fragment_cart_item_qty_remove"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/shop_cart_tv_item_qty"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SmallSp" />
@@ -77,6 +78,7 @@
         android:gravity="center"
         android:src="@drawable/ic_add_black"
         android:text="@string/shop_fragment_cart_item_qty_add"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/shop_cart_tv_item_price_total"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SmallSp" />
@@ -90,6 +92,7 @@
         android:gravity="center"
         android:src="@drawable/ic_remove_shopping_cart_black"
         android:text="@string/shop_fragment_cart_item_delete"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SmallSp" />

@@ -43,10 +43,7 @@ public abstract class CartDao {
         int price = item.getPrice();
         Cart cartItem = getCartItem(itemName);
         if (null == cartItem) {
-            cartItem = new Cart();
-            cartItem.setName(itemName);
-            cartItem.setPrice(price);
-            cartItem.setQuantity(1);
+            cartItem = new Cart(itemName, price, 1);
             addCart(cartItem);
         } else {
             addQty(itemName);

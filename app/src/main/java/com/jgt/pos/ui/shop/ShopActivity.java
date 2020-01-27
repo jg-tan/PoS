@@ -1,5 +1,6 @@
 package com.jgt.pos.ui.shop;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import com.jgt.pos.R;
 import com.jgt.pos.database.cart.Cart;
 import com.jgt.pos.database.cart.CartViewModel;
+import com.jgt.pos.kiosk.KioskManager;
 import com.jgt.pos.ui.admin.AdminActivity;
 import com.jgt.pos.utils.ContextManager;
 
@@ -24,15 +26,21 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class ShopActivity extends AppCompatActivity {
+    private static final String TAG = ShopActivity.class.getSimpleName();
 
     private AppBarConfiguration mAppBarConfiguration;
     private MenuItem menuCart;
     private CartViewModel cartViewModel;
+    private KioskManager kioskManager;
+    private ActivityManager am;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shop_activity);
+        kioskManager = KioskManager.getInstance();
+        am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        startKioskMode();
         Toolbar toolbar = findViewById(R.id.tb_shop);
         setSupportActionBar(toolbar);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -72,7 +80,9 @@ public class ShopActivity extends AppCompatActivity {
         switch (id) {
             case R.id.shop_nav_admin_fragment:
                 //TODO: check for password first
-                this.startActivity(new Intent(this, AdminActivity.class));
+                disableKioskMode();
+                startAdminActivity();
+                finish();
                 break;
             case R.id.shop_nav_cart_fragment:
                 //NavController is attached to nav_host
@@ -80,7 +90,7 @@ public class ShopActivity extends AppCompatActivity {
                     Navigation.findNavController(this, R.id.shop_nav_host_fragment)
                             .navigate(R.id.on_cart_clicked);
                 } catch (Exception e) {
-                    Log.w("GAB", "Cart is double clicked, will cause force stop");
+                    Log.w(TAG, "Cart is double clicked, will cause force stop");
                 }
                 break;
             default:
@@ -109,5 +119,27 @@ public class ShopActivity extends AppCompatActivity {
         if (null != menuCart) {
             menuCart.setVisible(false);
         }
+    }
+
+
+    private void startKioskMode() {
+        kioskManager.applyLockPolicies();
+        if (ActivityManager.LOCK_TASK_MODE_NONE ==
+                am.getLockTaskModeState()) {
+            startLockTask();
+        }
+    }
+
+    private void disableKioskMode() {
+        if (ActivityManager.LOCK_TASK_MODE_LOCKED ==
+                am.getLockTaskModeState()) {
+            stopLockTask();
+        }
+        kioskManager.revokeLockPolicies();
+    }
+
+    private void startAdminActivity() {
+        Intent intent = new Intent(this, AdminActivity.class);
+        startActivity(intent);
     }
 }

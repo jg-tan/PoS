@@ -5,6 +5,7 @@
     <string name="admin_fragment_add_product_title">Add Product</string>
     <string name="admin_fragment_edit_product_title">Edit Product</string>
     <string name="admin_fragment_product_list_title">Registered Products</string>
+    <string name="admin_fragment_sales_history_title">Sales History</string>
     <string name="admin_fragment_settings_title">Settings</string>
     <string name="shop_fragment_grid_title">Shop Name</string>
     <string name="shop_fragment_cart_title">Cart</string>
@@ -12,6 +13,7 @@
     <!-- Menu -->
     <string name="admin_menu_add_product">Add Product</string>
     <string name="admin_menu_product_list">Product List</string>
+    <string name="admin_menu_sales_history">Sales History</string>
     <string name="admin_menu_settings">Settings</string>
     <string name="admin_menu_close">Close</string>
     <string name="shop_menu_open_admin">Admin</string>

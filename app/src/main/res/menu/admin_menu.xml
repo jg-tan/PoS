@@ -12,6 +12,11 @@
         android:title="@string/admin_menu_product_list" />
 
     <item
+        android:id="@+id/admin_nav_sales_history_fragment"
+        android:icon="@drawable/ic_history_black"
+        android:title="@string/admin_menu_sales_history" />
+
+    <item
         android:id="@+id/admin_nav_settings_fragment"
         android:icon="@drawable/ic_settings_black"
         android:title="@string/admin_menu_settings" />
