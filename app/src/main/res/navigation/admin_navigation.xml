@@ -23,6 +23,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/admin_nav_sales_history_fragment"
+        android:name="com.jgt.pos.ui.admin.saleshistory.SalesHistoryFragment"
+        android:label="@string/admin_fragment_sales_history_title"
+        tools:layout="@layout/admin_fragment_sales_history" />
+
+    <fragment
         android:id="@+id/admin_nav_edit_product_fragment"
         android:name="com.jgt.pos.ui.admin.editproduct.EditProductFragment"
         android:label="@string/admin_fragment_edit_product_title"

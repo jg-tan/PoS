@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,11 +13,11 @@
         android:id="@+id/shop_cart_fragment_rv_cart_items"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        tools:listitem="@layout/shop_adapter_cart" />
 
     <View style="@style/Divider" />
 
-    <!-- TODO: -->
     <include layout="@layout/shop_fragment_cart_checkout" />
 
 </LinearLayout>

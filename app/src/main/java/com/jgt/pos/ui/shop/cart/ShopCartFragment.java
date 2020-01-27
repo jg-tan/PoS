@@ -39,6 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 //TODO: checkout
 public class ShopCartFragment extends Fragment {
+    private static final String TAG = ShopCartFragment.class.getSimpleName();
 
     private RecyclerView rvListView;
     private LinearLayoutManager layoutManager;
@@ -51,12 +52,17 @@ public class ShopCartFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d("GAB", "CART");
+        Log.d(TAG, "CART");
         rootView = inflater.inflate(R.layout.shop_fragment_cart, container, false);
         initRecyclerView();
         initViewModels();
-        hideButtonsFromLabel();
+        initViews();
         return rootView;
+    }
+
+    private void initViews() {
+        btnCheckout = rootView.findViewById(R.id.shop_cart_btn_checkout);
+        btnCheckout.setOnClickListener(this::onCheckoutClicked);
     }
 
     private void initViewModels() {
@@ -79,11 +85,11 @@ public class ShopCartFragment extends Fragment {
         rvListView.setHasFixedSize(true);
         rvListView.setLayoutManager(layoutManager);
         rvListView.setAdapter(adapter);
-        btnCheckout = rootView.findViewById(R.id.shop_cart_btn_checkout);
-        btnCheckout.setOnClickListener(this::onCheckoutClicked);
+
     }
 
     private void onCheckoutClicked(View view) {
+        cartViewModel.saveTransactionHistory();
         cartViewModel.deleteAll();
     }
 
@@ -103,11 +109,5 @@ public class ShopCartFragment extends Fragment {
             default:
                 break;
         }
-    }
-
-    private void hideButtonsFromLabel() {
-        rootView.findViewById(R.id.shop_cart_btn_add_qty).setVisibility(View.INVISIBLE);
-        rootView.findViewById(R.id.shop_cart_btn_remove_qty).setVisibility(View.INVISIBLE);
-        rootView.findViewById(R.id.shop_cart_btn_delete).setVisibility(View.INVISIBLE);
     }
 }

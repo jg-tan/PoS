@@ -3,6 +3,8 @@ package com.jgt.pos.database.cart;
 import android.util.Log;
 
 import com.jgt.pos.database.item.Item;
+import com.jgt.pos.database.sales.Sales;
+import com.jgt.pos.database.sales.SalesRepository;
 
 import java.util.List;
 
@@ -40,5 +42,23 @@ public class CartViewModel extends ViewModel {
 
     public void deleteAll() {
         CartRepository.getInstance().deleteAll();
+    }
+
+    public void saveTransactionHistory() {
+        long currentTime = System.currentTimeMillis();
+        List<Cart> currentCart = cartData.getValue();
+
+        if (null == currentCart || currentCart.isEmpty()) {
+            Log.d(TAG, "@saveTransactionHistory: Cart is empty");
+            return;
+        }
+
+        for (Cart c : currentCart) {
+            Sales s = new Sales(c.getName(),
+                    c.getPrice(),
+                    currentTime,
+                    c.getQuantity());
+            SalesRepository.getInstance().insertSalesItem(s);
+        }
     }
 }

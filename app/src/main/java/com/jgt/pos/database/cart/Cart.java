@@ -18,6 +18,12 @@ public class Cart {
     @ColumnInfo(name = "cart_quantity")
     private int quantity;
 
+    public Cart(@NonNull String name, int price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     @NonNull
     public String getName() {
         return name;
@@ -41,5 +47,14 @@ public class Cart {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
     }
 }

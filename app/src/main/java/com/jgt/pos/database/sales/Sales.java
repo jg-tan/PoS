@@ -7,8 +7,9 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Sales {
-    @NonNull
     @PrimaryKey
+    private int salesId;
+
     @ColumnInfo(name = "sales_name")
     private String name;
 
@@ -21,7 +22,21 @@ public class Sales {
     @ColumnInfo(name = "sales_quantity")
     private int quantity;
 
-    @NonNull
+    public Sales(String name, int price, long timestamp, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.timestamp = timestamp;
+        this.quantity = quantity;
+    }
+
+    public int getSalesId() {
+        return salesId;
+    }
+
+    public void setSalesId(int salesId) {
+        this.salesId = salesId;
+    }
+
     public String getName() {
         return name;
     }
@@ -53,4 +68,16 @@ public class Sales {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    @Override
+    public String toString() {
+        return "Sales{" +
+                "salesId=" + salesId +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", timestamp=" + timestamp +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
+

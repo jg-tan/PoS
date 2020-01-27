@@ -24,6 +24,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class ShopActivity extends AppCompatActivity {
+    private static final String TAG = ShopActivity.class.getSimpleName();
 
     private AppBarConfiguration mAppBarConfiguration;
     private MenuItem menuCart;
@@ -72,7 +73,7 @@ public class ShopActivity extends AppCompatActivity {
         switch (id) {
             case R.id.shop_nav_admin_fragment:
                 //TODO: check for password first
-                this.startActivity(new Intent(this, AdminActivity.class));
+                startActivity(new Intent(this, AdminActivity.class));
                 break;
             case R.id.shop_nav_cart_fragment:
                 //NavController is attached to nav_host
@@ -80,7 +81,7 @@ public class ShopActivity extends AppCompatActivity {
                     Navigation.findNavController(this, R.id.shop_nav_host_fragment)
                             .navigate(R.id.on_cart_clicked);
                 } catch (Exception e) {
-                    Log.w("GAB", "Cart is double clicked, will cause force stop");
+                    Log.w(TAG, "Cart is double clicked, will cause force stop");
                 }
                 break;
             default:
