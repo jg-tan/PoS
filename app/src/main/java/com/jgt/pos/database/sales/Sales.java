@@ -5,9 +5,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "sales_table")
 public class Sales {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int salesId;
 
     @ColumnInfo(name = "sales_name")

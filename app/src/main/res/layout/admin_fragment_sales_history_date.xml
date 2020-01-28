@@ -7,69 +7,81 @@
     android:paddingBottom="8dp">
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/admin_sales_list_et_mm_from"
+        android:layout_width="@dimen/admin_fragment_sales_history_et_mmdd_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_et_height"
         android:gravity="center"
         android:hint="MM"
         android:inputType="numberDecimal"
+        android:maxLength="2"
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/admin_sales_list_et_mm_to"
+        android:layout_width="@dimen/admin_fragment_sales_history_et_mmdd_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_et_height"
         android:layout_marginStart="12dp"
         android:gravity="center"
         android:hint="MM"
         android:inputType="numberDecimal"
+        android:maxLength="2"
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editText11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/admin_sales_list_et_dd_to"
+        android:layout_width="@dimen/admin_fragment_sales_history_et_mmdd_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_et_height"
         android:gravity="center"
         android:hint="DD"
         android:inputType="numberDecimal"
+        android:maxLength="2"
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/editText12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/admin_sales_list_et_yyyy_to"
+        android:layout_width="@dimen/admin_fragment_sales_history_et_yyyy_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_et_height"
         android:gravity="center"
         android:hint="YYYY"
         android:inputType="numberDecimal"
+        android:maxLength="4"
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/admin_sales_list_et_dd_from"
+        android:layout_width="@dimen/admin_fragment_sales_history_et_mmdd_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_et_height"
         android:gravity="center"
         android:hint="DD"
         android:inputType="numberDecimal"
+        android:maxLength="2"
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/admin_sales_list_et_yyyy_from"
+        android:layout_width="@dimen/admin_fragment_sales_history_et_yyyy_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_et_height"
         android:layout_marginEnd="12dp"
         android:gravity="center"
         android:hint="YYYY"
         android:inputType="numberDecimal"
+        android:maxLength="4"
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
@@ -77,57 +89,57 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="7dp"
-        android:layout_height="25dp"
+        android:layout_width="@dimen/admin_fragment_sales_history_slash_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_slash_height"
         android:text="/"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText2"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toTopOf="@+id/editText2" />
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_sales_list_et_dd_from"
+        app:layout_constraintEnd_toStartOf="@+id/admin_sales_list_et_dd_from"
+        app:layout_constraintTop_toTopOf="@+id/admin_sales_list_et_dd_from" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/admin_fragment_sales_history_slash_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_slash_height"
         android:text="/"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText10"
-        app:layout_constraintStart_toEndOf="@+id/editText10"
-        app:layout_constraintTop_toTopOf="@+id/editText10" />
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_sales_list_et_mm_to"
+        app:layout_constraintStart_toEndOf="@+id/admin_sales_list_et_mm_to"
+        app:layout_constraintTop_toTopOf="@+id/admin_sales_list_et_mm_to" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/admin_fragment_sales_history_slash_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_slash_height"
         android:text="/"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText11"
-        app:layout_constraintStart_toEndOf="@+id/editText11"
-        app:layout_constraintTop_toTopOf="@+id/editText11" />
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_sales_list_et_dd_to"
+        app:layout_constraintStart_toEndOf="@+id/admin_sales_list_et_dd_to"
+        app:layout_constraintTop_toTopOf="@+id/admin_sales_list_et_dd_to" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/admin_fragment_sales_history_slash_width"
+        android:layout_height="@dimen/admin_fragment_sales_history_slash_height"
         android:text="/"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_sales_list_et_yyyy_from"
+        app:layout_constraintEnd_toStartOf="@+id/admin_sales_list_et_yyyy_from"
+        app:layout_constraintTop_toTopOf="@+id/admin_sales_list_et_yyyy_from" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TO"
-        android:textSize="20dp"
+        android:textSize="@dimen/admin_fragment_sales_history_date_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/admin_sales_list_btn_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
@@ -135,18 +147,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.893"
-        app:layout_constraintStart_toEndOf="@+id/editText12"
+        app:layout_constraintStart_toEndOf="@+id/admin_sales_list_et_yyyy_to"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/admin_sales_btn_export"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="EXPORT"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/admin_sales_list_et_mm_from"
         app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
