@@ -29,6 +29,13 @@
     <string name="admin_fragment_add_product_add_item">Add Item</string>
     <string name="admin_fragment_add_product_add_icon">Add Icon</string>
 
+    <!-- Sales History Fragment -->
+    <string name="admin_fragment_sales_history_item_date">Date</string>
+    <string name="admin_fragment_sales_history_item_name">Item Name</string>
+    <string name="admin_fragment_sales_history_item_price_single">Price</string>
+    <string name="admin_fragment_sales_history_item_qty">Qty</string>
+    <string name="admin_fragment_sales_history_item_price_total">Total</string>
+
     <!-- Shop Activity -->
     <!-- Grid Fragment -->
     <string name="shop_fragment_grid_item_name_placeholder">Item Name</string>
