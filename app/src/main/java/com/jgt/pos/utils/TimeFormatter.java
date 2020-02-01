@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class TimeFormatter {
     public static String toDate(long timeStamp) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd yyyy HH:mm");
         return dateFormat.format(timeStamp);
     }
 

@@ -29,15 +29,12 @@ public class SalesRepository {
     }
 
     public void insertSalesItem(Sales sales) {
-        Log.d("@TEST", "@insert: " + sales.toString());
         mExecutor.submit(() -> salesDao.insertSales(sales));
     }
 
     public LiveData<List<Sales>> getSales() {
         try {
-            LiveData<List<Sales>> s = mExecutor.submit(salesDao::getSales).get();
-            Log.d("@TEST", "@getSalesDao: " + (s == null));
-            return s;
+            return  mExecutor.submit(salesDao::getSales).get();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,7 +43,7 @@ public class SalesRepository {
 
     public LiveData<List<Sales>> searchSales(long timestampFrom, long timestampTo) {
         try {
-            mExecutor.submit(() -> salesDao.searchSales(timestampFrom, timestampTo)).get();
+            return mExecutor.submit(() -> salesDao.searchSales(timestampFrom, timestampTo)).get();
         } catch (Exception e) {
             e.printStackTrace();
         }

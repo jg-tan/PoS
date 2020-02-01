@@ -8,19 +8,27 @@ import androidx.room.PrimaryKey;
 @SuppressWarnings("NullableProblems")
 @Entity(tableName = "item_table")
 public class Item {
-    @NonNull
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "item_id")
+    private int itemId;
+
     @ColumnInfo(name = "item_name")
     private String name;
 
     @ColumnInfo(name = "item_price")
     private int price;
 
-    //TODO: Consider saving icon path instead as a STRING
-    @ColumnInfo(name = "item_icon", typeAffinity = ColumnInfo.BLOB)
-    private byte[] icon;
+    @ColumnInfo(name = "item_icon")
+    private String icon;
 
-    @NonNull
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
+
     public String getName() {
         return name;
     }
@@ -37,11 +45,21 @@ public class Item {
         this.price = price;
     }
 
-    public byte[] getIcon() {
+    public String getIcon() {
         return icon;
     }
 
-    public void setIcon(byte[] icon) {
+    public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemId=" + itemId +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", icon='" + icon + '\'' +
+                '}';
     }
 }

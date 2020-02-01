@@ -73,7 +73,7 @@ public class ShopGridAdapter extends RecyclerView.Adapter<ShopGridAdapter.GridIt
             this.btnItem.setTag(item);
             String name = item.getName();
             int price = item.getPrice();
-            byte[] icon = item.getIcon();
+            String icon = item.getIcon();
             tvItemName.setText(name);
             tvItemPrice.setText(Integer.toString(price));
         }

@@ -18,7 +18,7 @@
         android:label="@string/admin_fragment_product_list_title"
         tools:layout="@layout/admin_fragment_product_list">
         <action
-            android:id="@+id/fragment_list_action_item_long_press"
+            android:id="@+id/on_edit_clicked"
             app:destination="@+id/admin_nav_edit_product_fragment" />
     </fragment>
 

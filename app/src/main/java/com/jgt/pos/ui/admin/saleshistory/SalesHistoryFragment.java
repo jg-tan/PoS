@@ -91,10 +91,11 @@ public class SalesHistoryFragment extends Fragment {
         long timestampTo = parseDateToTimestamp(monthTo, dayTo, yearTo);
 
         if (INVALID_TIMESTAMP != timestampFrom
-                && INVALID_TIMESTAMP != timestampTo) {
+                && INVALID_TIMESTAMP != timestampTo
+                && timestampTo >= timestampFrom) {
             salesHistoryViewModel.searchSales(timestampFrom, timestampTo).observe(this, this::onSalesListChanged);
         } else {
-            Toast.makeText(getActivity(), "Please enter valid dates", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Please enter valid date range", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -102,9 +103,9 @@ public class SalesHistoryFragment extends Fragment {
     }
 
     private long parseDateToTimestamp(String month, String day, String year) {
-        if (TextUtils.isEmpty(month)
-                && TextUtils.isEmpty(day)
-                && TextUtils.isEmpty(year)) {
+        if (!TextUtils.isEmpty(month)
+                && !TextUtils.isEmpty(day)
+                && !TextUtils.isEmpty(year)) {
             String date = year + "-" + month + "-" + day;
             try {
                 return TimeFormatter.toTimestamp(date);

@@ -30,11 +30,11 @@ public class TestUtils {
         return testList;
     }
 
-    private static Item createItem(String name, int price, byte[] blob) {
+    private static Item createItem(String name, int price, String icon) {
         Item item = new Item();
         item.setName(name);
         item.setPrice(price);
-        item.setIcon(blob);
+        item.setIcon(icon);
         return item;
     }
 

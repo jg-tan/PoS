@@ -7,4 +7,7 @@ public class Constants {
 
     public static final String DEFAULT_PASSWORD = "hahahahawtfisthishit";
     public static final String MASTER_PASSWORD = "TK9mWt9-Lt$33$*_Z+K8";
+
+    public static final String EDIT_EXTRA_ITEM_ID = "edit extra item id";
+
 }
