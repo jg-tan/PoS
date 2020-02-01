@@ -55,10 +55,9 @@ public class EditProductFragment extends Fragment {
 
     public void onEditItemClicked(View view) {
         int itemId = item.getItemId();
-        String itemName = item.getName();
-        int itemPrice = item.getPrice();
-        String itemIcon = item.getIcon();
-        Log.d("EXD", "onEditClicked " + item);
+        String itemName = etName.getText().toString();
+        int itemPrice = Integer.parseInt(etPrice.getText().toString());
+        String itemIcon = null;
         ItemRepository.getInstance().editItem(itemId, itemName, itemPrice, itemIcon);
     }
 }
