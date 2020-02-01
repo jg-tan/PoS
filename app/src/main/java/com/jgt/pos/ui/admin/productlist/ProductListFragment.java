@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.jgt.pos.R;
 import com.jgt.pos.database.item.Item;
 import com.jgt.pos.database.item.ItemViewModel;
+import com.jgt.pos.utils.Constants;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -73,10 +75,15 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         int id = v.getId();
+        Item item = (Item) v.getTag();
         switch (id) {
             case R.id.admin_product_list_btn_delete:
-                Item item = (Item) v.getTag();
                 itemViewModel.deleteItem(item.getName());
+                break;
+            case R.id.admin_product_list_btn_edit:
+                Bundle bundle = new Bundle();
+                bundle.putInt(Constants.EDIT_EXTRA_ITEM_ID, item.getItemId());
+                Navigation.findNavController(v).navigate(R.id.on_edit_clicked, bundle);
                 break;
             default:
                 break;

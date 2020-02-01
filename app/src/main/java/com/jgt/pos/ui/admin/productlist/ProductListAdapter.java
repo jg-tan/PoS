@@ -55,7 +55,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     class ProductListItemViewHolder extends RecyclerView.ViewHolder {
         Item item;
         TextView tvItemName, tvItemPrice;
-        ImageButton btnDelete;
+        ImageButton btnDelete, btnEdit;
         ImageView ivItemIcon;
 
         ProductListItemViewHolder(@NonNull View itemView) {
@@ -63,17 +63,20 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             this.tvItemName = itemView.findViewById(R.id.admin_product_list_tv_item_name);
             this.tvItemPrice = itemView.findViewById(R.id.admin_product_list_tv_item_price);
             this.btnDelete = itemView.findViewById(R.id.admin_product_list_btn_delete);
+            this.btnEdit = itemView.findViewById(R.id.admin_product_list_btn_edit);
             this.ivItemIcon = itemView.findViewById(R.id.admin_product_list_iv_item_icon);
             this.btnDelete.setOnClickListener(listener);
+            this.btnEdit.setOnClickListener(listener);
         }
 
         @SuppressLint("SetTextI18n")
         void setProductItem(Item item) {
             this.item = item;
             this.btnDelete.setTag(item);
+            this.btnEdit.setTag(item);
             String name = item.getName();
             int price = item.getPrice();
-            byte[] icon = item.getIcon();
+            String icon = item.getIcon();
             tvItemName.setText(name);
             tvItemPrice.setText(Integer.toString(price));
         }

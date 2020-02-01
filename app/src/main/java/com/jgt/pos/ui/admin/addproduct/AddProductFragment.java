@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.jgt.pos.R;
 import com.jgt.pos.database.item.Item;
@@ -45,6 +46,9 @@ public class AddProductFragment extends Fragment {
         item.setName(etName.getText().toString());
         item.setPrice(Integer.parseInt(etPrice.getText().toString()));
         item.setIcon(null); //TODO
-        ItemRepository.getInstance().addItem(item);
+        boolean addItemSuccess = ItemRepository.getInstance().addItem(item);
+        if (!addItemSuccess) {
+            Toast.makeText(getActivity(), "Item already exists.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
