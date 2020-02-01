@@ -103,9 +103,9 @@ public class SalesHistoryFragment extends Fragment {
     }
 
     private long parseDateToTimestamp(String month, String day, String year) {
-        if (TextUtils.isEmpty(month)
-                && TextUtils.isEmpty(day)
-                && TextUtils.isEmpty(year)) {
+        if (!TextUtils.isEmpty(month)
+                && !TextUtils.isEmpty(day)
+                && !TextUtils.isEmpty(year)) {
             String date = year + "-" + month + "-" + day;
             try {
                 return TimeFormatter.toTimestamp(date);
