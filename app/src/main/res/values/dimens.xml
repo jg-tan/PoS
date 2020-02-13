@@ -17,25 +17,27 @@
     <dimen name="admin_adapter_product_list_padding_bottom">10dp</dimen>
 
     <!-- Sales History Fragment -->
-    <dimen name="admin_fragment_sales_history_label_text_size">16sp</dimen>
-    <dimen name="admin_fragment_sales_history_label_height">30dp</dimen>
-    <dimen name="admin_fragment_sales_history_label_date_width">140dp</dimen>
-    <dimen name="admin_fragment_sales_history_label_name_width">160dp</dimen>
-    <dimen name="admin_fragment_sales_history_label_price_single_width">80dp</dimen>
-    <dimen name="admin_fragment_sales_history_label_price_qty_width">80dp</dimen>
-    <dimen name="admin_fragment_sales_history_label_price_total_width">80dp</dimen>
+    <dimen name="admin_fragment_sales_history_label_text_size">12sp</dimen>
+    <dimen name="admin_fragment_sales_history_label_height">20dp</dimen>
+    <dimen name="admin_fragment_sales_history_label_date_width">120dp</dimen>
+    <dimen name="admin_fragment_sales_history_label_name_width">140dp</dimen>
+    <dimen name="admin_fragment_sales_history_label_price_single_width">45dp</dimen>
+    <dimen name="admin_fragment_sales_history_label_price_qty_width">45dp</dimen>
+    <dimen name="admin_fragment_sales_history_label_price_total_width">45dp</dimen>
 
-    <dimen name="admin_fragment_sales_history_item_text_size">14sp</dimen>
-    <dimen name="admin_fragment_sales_history_item_height">24dp</dimen>
+    <dimen name="admin_fragment_sales_history_item_text_size">12sp</dimen>
+    <dimen name="admin_fragment_sales_history_item_height">20dp</dimen>
 
     <dimen name="admin_fragment_sales_history_et_height">45dp</dimen>
-    <dimen name="admin_fragment_sales_history_et_mmdd_width">45dp</dimen>
-    <dimen name="admin_fragment_sales_history_et_yyyy_width">60dp</dimen>
+    <dimen name="admin_fragment_sales_history_et_mmdd_width">30dp</dimen>
+    <dimen name="admin_fragment_sales_history_et_yyyy_width">40dp</dimen>
 
     <dimen name="admin_fragment_sales_history_slash_height">25dp</dimen>
-    <dimen name="admin_fragment_sales_history_slash_width">7dp</dimen>
+    <dimen name="admin_fragment_sales_history_slash_width">10dp</dimen>
 
-    <dimen name="admin_fragment_sales_history_date_text_size">20sp</dimen>
+    <dimen name="admin_fragment_sales_history_date_text_size">13sp</dimen>`
+    <dimen name="admin_fragment_sales_history_slash_size">25sp</dimen>
+
     <!-- Shop Activity -->
     <!-- Cart Fragment -->
     <dimen name="shop_adapter_cart_margin_top_bottom">1.5dp</dimen>
@@ -45,7 +47,7 @@
     <dimen name="shop_adapter_cart_label_height">40dp</dimen>
     <dimen name="shop_adapter_cart_item_price_width">50dp</dimen>
     <dimen name="shop_adapter_cart_item_qty_width">30dp</dimen>
-    <dimen name="shop_adapter_cart_text_size">16sp</dimen>
+    <dimen name="shop_adapter_cart_text_size">14sp</dimen>
     <dimen name="shop_adapter_cart_checkout_button_text_size">10sp</dimen>
     <dimen name="shop_adapter_cart_checkout_width">80dp</dimen>
     <dimen name="shop_adapter_cart_checkout_label_total_width">50dp</dimen>

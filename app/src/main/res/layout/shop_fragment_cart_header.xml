@@ -18,7 +18,9 @@
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="@string/shop_fragment_cart_item_name"
+        android:textAllCaps="true"
         android:textSize="@dimen/shop_adapter_cart_text_size"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +31,9 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_item_price_single"
+        android:textAllCaps="true"
         android:textSize="@dimen/shop_adapter_cart_text_size"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/shop_cart_btn_remove_qty"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/shop_cart_tv_item_name"
@@ -42,7 +46,9 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_item_price_total"
+        android:textAllCaps="true"
         android:textSize="@dimen/shop_adapter_cart_text_size"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/shop_cart_btn_delete"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,7 +59,9 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_item_qty"
+        android:textAllCaps="true"
         android:textSize="@dimen/shop_adapter_cart_text_size"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/shop_cart_btn_add_qty"
         app:layout_constraintTop_toTopOf="parent" />
 
