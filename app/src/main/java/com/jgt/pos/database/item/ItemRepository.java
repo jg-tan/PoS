@@ -38,8 +38,8 @@ public class ItemRepository {
         return false;
     }
 
-    public void deleteItem(String itemName) {
-        mExecutor.submit(() -> itemDao.deleteItem(itemName));
+    public void deleteItem(int itemId) {
+        mExecutor.submit(() -> itemDao.deleteItem(itemId));
     }
 
     public void editItem(int itemId, String itemName, int itemPrice, String itemIcon) {

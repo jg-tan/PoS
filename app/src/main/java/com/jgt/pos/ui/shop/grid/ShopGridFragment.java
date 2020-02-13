@@ -62,7 +62,7 @@ public class ShopGridFragment extends Fragment {
         rvListView = rootView.findViewById(R.id.shop_grid_fragment_rv_item_list);
         adapter = new ShopGridAdapter();
         adapter.setOnClickListener(this::onAdapterClicked);
-        layoutManager = new GridLayoutManager(activity, 4);
+        layoutManager = new GridLayoutManager(activity, 3);
         rvListView.setHasFixedSize(true);
         rvListView.setLayoutManager(layoutManager);
         rvListView.setAdapter(adapter);

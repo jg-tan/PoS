@@ -57,7 +57,7 @@ public class EditProductFragment extends Fragment {
         int itemId = item.getItemId();
         String itemName = etName.getText().toString();
         int itemPrice = Integer.parseInt(etPrice.getText().toString());
-        String itemIcon = null;
+        String itemIcon = ""; //TODO
         ItemRepository.getInstance().editItem(itemId, itemName, itemPrice, itemIcon);
     }
 }

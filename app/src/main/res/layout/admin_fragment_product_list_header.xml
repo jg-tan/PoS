@@ -18,7 +18,9 @@
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="@string/shop_fragment_cart_item_name"
+        android:textAllCaps="true"
         android:textSize="@dimen/admin_fragment_product_list_text_size"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/admin_product_list_iv_item_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,23 +32,10 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/shop_fragment_cart_item_price_single"
-        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/admin_fragment_product_list_text_size"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/admin_product_list_tv_item_name"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/admin_product_list_btn_delete"
-        android:layout_width="@dimen/admin_fragment_product_list_button_remove_size"
-        android:layout_height="@dimen/admin_fragment_product_list_header_box_height"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:src="@drawable/ic_delete_black"
-        android:text="@string/shop_fragment_cart_item_delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/admin_product_list_tv_item_price"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -55,6 +44,7 @@
         android:layout_height="@dimen/admin_fragment_product_list_header_box_height"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />

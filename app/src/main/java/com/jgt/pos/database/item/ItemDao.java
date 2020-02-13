@@ -17,8 +17,8 @@ public abstract class ItemDao {
     abstract void insertItem(Item item);
 
     @Query("DELETE FROM item_table " +
-            "WHERE item_name == :itemName")
-    abstract void deleteItem(String itemName);
+            "WHERE item_id == :itemId")
+    abstract void deleteItem(int itemId);
 
     @Query("SELECT * FROM item_table")
     abstract LiveData<List<Item>> getItems();

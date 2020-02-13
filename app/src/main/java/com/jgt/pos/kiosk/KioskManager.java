@@ -52,6 +52,7 @@ public class KioskManager {
     }
 
     public void enableKiosk() {
+//        dpm.clearDeviceOwnerApp("com.jgt.pos");
         pm.setComponentEnabledSetting(
                 lockTaskComponent,
                 PackageManager.COMPONENT_ENABLED_STATE_ENABLED,

@@ -41,7 +41,6 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
         Log.d("GAB", "GRID");
         rootView = inflater.inflate(R.layout.admin_fragment_product_list, container, false);
         initRecyclerView();
-        hideButtonsFromLabel();
         initViewModel();
         return rootView;
     }
@@ -67,18 +66,13 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
         rvListView.setAdapter(adapter);
     }
 
-    private void hideButtonsFromLabel() {
-        rootView.findViewById(R.id.admin_product_list_iv_item_icon).setVisibility(View.INVISIBLE);
-        rootView.findViewById(R.id.admin_product_list_btn_delete).setVisibility(View.INVISIBLE);
-    }
-
     @Override
     public void onClick(View v) {
         int id = v.getId();
         Item item = (Item) v.getTag();
         switch (id) {
             case R.id.admin_product_list_btn_delete:
-                itemViewModel.deleteItem(item.getName());
+                itemViewModel.deleteItem(item.getItemId());
                 break;
             case R.id.admin_product_list_btn_edit:
                 Bundle bundle = new Bundle();

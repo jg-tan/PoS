@@ -7,7 +7,9 @@
 
     <include layout="@layout/admin_fragment_product_list_header" />
 
-    <View style="@style/Divider" />
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="2.5dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/admin_product_list_fragment_rv_item_list"

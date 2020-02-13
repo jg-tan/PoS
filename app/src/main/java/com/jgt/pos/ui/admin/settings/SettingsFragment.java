@@ -1,5 +1,6 @@
 package com.jgt.pos.ui.admin.settings;
 
+import android.app.admin.DevicePolicyManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;

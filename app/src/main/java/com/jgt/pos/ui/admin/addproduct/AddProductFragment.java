@@ -45,7 +45,7 @@ public class AddProductFragment extends Fragment {
         Item item = new Item();
         item.setName(etName.getText().toString());
         item.setPrice(Integer.parseInt(etPrice.getText().toString()));
-        item.setIcon(null); //TODO
+        item.setIcon(""); //TODO
         boolean addItemSuccess = ItemRepository.getInstance().addItem(item);
         if (!addItemSuccess) {
             Toast.makeText(getActivity(), "Item already exists.", Toast.LENGTH_SHORT).show();

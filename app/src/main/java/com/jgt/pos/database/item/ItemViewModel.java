@@ -24,7 +24,7 @@ public class ItemViewModel extends ViewModel {
         return items;
     }
 
-    public void deleteItem(String itemName) {
-        ItemRepository.getInstance().deleteItem(itemName);
+    public void deleteItem(int itemId) {
+        ItemRepository.getInstance().deleteItem(itemId);
     }
 }
