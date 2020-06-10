@@ -24,6 +24,15 @@ public class SharedPref {
         return instance;
     }
 
+    public Long getPriceTotal() {
+        return pref.getLong(Constants.CART_PRICE_TOTAL, 0);
+    }
+
+    public void setPriceTotal(long price) {
+        editor.putLong(Constants.CART_PRICE_TOTAL, price);
+        editor.commit();
+    }
+
     public String getPassword() {
         return pref.getString(Constants.ADMIN_PASSWORD, Constants.DEFAULT_PASSWORD);
     }

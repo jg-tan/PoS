@@ -3,6 +3,7 @@ package com.jgt.pos.database.cart;
 import com.jgt.pos.database.item.Item;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -28,8 +29,15 @@ public class CartRepository {
         return instance;
     }
 
-    public void deleteFromCart(String cartName) {
-        mExecutor.submit(() -> cartDao.deleteFromCart(cartName));
+    public int deleteFromCart(String cartName) {
+        try {
+            return mExecutor.submit(() -> cartDao.deleteFromCart(cartName)).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public LiveData<List<Cart>> getCart() {

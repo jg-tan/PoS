@@ -20,7 +20,7 @@ public abstract class CartDao {
 
     @Query("DELETE FROM cart_table " +
             "WHERE cart_name == :cartName")
-    abstract void deleteFromCart(String cartName);
+    abstract void delete(String cartName);
 
     @Query("SELECT * FROM cart_table")
     abstract LiveData<List<Cart>> getCart();
@@ -64,5 +64,11 @@ public abstract class CartDao {
                 removeQty(cartName);
             }
         }
+    }
+
+    public int deleteFromCart(String cartName) {
+        int qty = getCartItem(cartName).getQuantity();
+        delete(cartName);
+        return qty;
     }
 }

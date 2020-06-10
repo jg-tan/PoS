@@ -6,12 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.jgt.pos.R;
 import com.jgt.pos.database.cart.Cart;
 import com.jgt.pos.database.cart.CartViewModel;
 import com.jgt.pos.database.item.Item;
 import com.jgt.pos.ui.shop.ShopActivity;
+import com.jgt.pos.utils.SharedPref;
 
 import java.util.List;
 
@@ -42,6 +44,7 @@ public class ShopCartFragment extends Fragment {
     private static final String TAG = ShopCartFragment.class.getSimpleName();
 
     private RecyclerView rvListView;
+    private TextView tvPriceTotal;
     private LinearLayoutManager layoutManager;
     private ShopCartListAdapter adapter;
     private View rootView;
@@ -69,6 +72,11 @@ public class ShopCartFragment extends Fragment {
         cartViewModel = ViewModelProviders.of(this).get(CartViewModel.class);
         cartViewModel.init();
         cartViewModel.getCart().observe(this, this::onCartChanged);
+        cartViewModel.getPriceTotal().observe(this, this::onPriceTotalChanged);
+    }
+
+    private void onPriceTotalChanged(Long priceTotal) {
+        tvPriceTotal.setText(priceTotal.toString());
     }
 
     private void onCartChanged(List<Cart> cart) {
@@ -79,13 +87,14 @@ public class ShopCartFragment extends Fragment {
         activity = (ShopActivity) getActivity();
         activity.hideCartButton();
         rvListView = rootView.findViewById(R.id.shop_cart_fragment_rv_cart_items);
+        tvPriceTotal = rootView.findViewById(R.id.shop_cart_tv_total);
+        tvPriceTotal.setText(SharedPref.get().getPriceTotal().toString());
         adapter = new ShopCartListAdapter();
         adapter.setOnClickListener(this::onAdapterClicked);
         layoutManager = new LinearLayoutManager(activity);
         rvListView.setHasFixedSize(true);
         rvListView.setLayoutManager(layoutManager);
         rvListView.setAdapter(adapter);
-
     }
 
     private void onCheckoutClicked(View view) {
