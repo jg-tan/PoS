@@ -51,6 +51,10 @@ public class KioskManager {
         setPolicies(false);
     }
 
+    public void clearDeviceOwner() {
+        dpm.clearDeviceOwnerApp("com.jgt.pos");
+    }
+
     public void enableKiosk() {
 //        dpm.clearDeviceOwnerApp("com.jgt.pos");
         pm.setComponentEnabledSetting(

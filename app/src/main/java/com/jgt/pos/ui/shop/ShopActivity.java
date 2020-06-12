@@ -12,6 +12,7 @@ import com.jgt.pos.database.cart.Cart;
 import com.jgt.pos.database.cart.CartViewModel;
 import com.jgt.pos.kiosk.KioskManager;
 import com.jgt.pos.ui.admin.AdminActivity;
+import com.jgt.pos.ui.dialog.DialogManager;
 import com.jgt.pos.utils.ContextManager;
 
 import java.util.List;
@@ -80,9 +81,7 @@ public class ShopActivity extends AppCompatActivity {
         switch (id) {
             case R.id.shop_nav_admin_fragment:
                 //TODO: check for password first
-                disableKioskMode();
-                startAdminActivity();
-                finish();
+                DialogManager.getInstance().showLockDeviceDialog(this, getWindow().getDecorView().getRootView(), this::onUnlockSuccess);
                 break;
             case R.id.shop_nav_cart_fragment:
                 //NavController is attached to nav_host
@@ -97,6 +96,12 @@ public class ShopActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    private void onUnlockSuccess() {
+        disableKioskMode();
+        startAdminActivity();
+        finish();
     }
 
     public void disableCartButton() {
