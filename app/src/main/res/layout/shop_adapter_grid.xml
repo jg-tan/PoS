@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@drawable/rounded_bg"
+    android:foreground="?attr/selectableItemBackground"
     android:clickable="true"
     android:padding="10dp">
 

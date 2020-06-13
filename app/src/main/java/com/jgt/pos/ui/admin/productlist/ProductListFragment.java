@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jgt.pos.R;
+import com.jgt.pos.database.cart.CartViewModel;
 import com.jgt.pos.database.item.Item;
 import com.jgt.pos.database.item.ItemViewModel;
 import com.jgt.pos.utils.Constants;
@@ -34,6 +35,7 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
     private ProductListAdapter adapter;
     private View rootView;
     private ItemViewModel itemViewModel;
+    private CartViewModel cartViewModel;
 
     @Nullable
     @Override
@@ -49,6 +51,9 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
         itemViewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
         itemViewModel.init();
         itemViewModel.getItems().observe(this, this::onItemListChanged);
+
+        cartViewModel = ViewModelProviders.of(this).get(CartViewModel.class);
+        cartViewModel.init();
     }
 
     private void onItemListChanged(List<Item> items) {
@@ -73,6 +78,7 @@ public class ProductListFragment extends Fragment implements View.OnClickListene
         switch (id) {
             case R.id.admin_product_list_btn_delete:
                 itemViewModel.deleteItem(item.getItemId());
+                cartViewModel.deleteFromCart(item);
                 break;
             case R.id.admin_product_list_btn_edit:
                 Bundle bundle = new Bundle();

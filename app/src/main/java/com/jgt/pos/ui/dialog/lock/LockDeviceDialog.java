@@ -3,6 +3,8 @@ package com.jgt.pos.ui.dialog.lock;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ public class LockDeviceDialog {
     private View dialogView;
     private Context context;
     private DialogResultListener callback;
+    private AlertDialog dialog;
 
     public static LockDeviceDialog getInstance() {
         if (null == instance) {
@@ -44,7 +47,8 @@ public class LockDeviceDialog {
 
         builder.setView(dialogView);
 
-        AlertDialog dialog = builder.create();
+        dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
 

@@ -34,6 +34,7 @@ public class SettingsFragment extends Fragment {
     private View rootView;
     private KioskManager kioskManager;
 
+    //TODO: TEMP
     private Button BTNCLEARDEVICEOWNER;
 
     @Nullable
@@ -46,12 +47,14 @@ public class SettingsFragment extends Fragment {
         this.btnChangePw.setOnClickListener(this::onChangePwClicked);
 
         this.BTNCLEARDEVICEOWNER = rootView.findViewById(R.id.TEMP_CLEAR_DEVICE_OWNER);
+        //TODO: TEMP
         this.BTNCLEARDEVICEOWNER.setOnClickListener(this::ONREMOVECLICKED);
         kioskManager = KioskManager.getInstance();
 //        kioskManager.disableKiosk();
         return rootView;
     }
 
+    //TODO: TEMP
     private void ONREMOVECLICKED(View view) {
         kioskManager.clearDeviceOwner();
     }
